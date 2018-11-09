@@ -14,6 +14,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
 import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
+import { UpdateMeasurementUnitComponent } from './measurement-unit/update-measurement-unit/update-measurement-unit.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { InsertDeviceComponent } from './device/insert-device/insert-device.comp
     HomeAdminComponent,
     InsertMeasurementUnitComponent,
     InventoryCategoryComponent,
-    InsertDeviceComponent
+    InsertDeviceComponent,
+    UpdateMeasurementUnitComponent
   ],
   imports: [
     BrowserModule,
