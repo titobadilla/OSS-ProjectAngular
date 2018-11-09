@@ -27,8 +27,10 @@ export class InsertMeasurementUnitComponent implements OnInit {
   createMeasurementUnit(): void {
     this.service.insertMeasurementUnit(this.measurementUnit)
     .subscribe(data => {
-      console.log(this.measurementUnit.name);
+     
     });
     }
+
+
 
 }
