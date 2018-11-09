@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
 import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
+import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measur
     MenuComponent,
     HomeAdminComponent,
     InsertMeasurementUnitComponent,
-    InventoryCategoryComponent
+    InventoryCategoryComponent,
+    InsertDeviceComponent
   ],
   imports: [
     BrowserModule,

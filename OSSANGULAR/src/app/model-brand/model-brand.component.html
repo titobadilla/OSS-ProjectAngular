@@ -1,3 +1,214 @@
-<p>
-  model-brand works!
-</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Operation of Security System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="model-brand.component.css" />
+</head>
+
+<body background="fondo2.jpg">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <div class="container">
+                    <ul id="accordion" class="accordion">
+                        <li>
+                            <div class="link"></div>
+                        </li>
+                        <li>
+                            <div class="link">
+                                <i class="fa fa-paint-brush"></i>Usuarios
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Ingresar un usuario nuevo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Buscar un usuario</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver todos los usuarios</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar rol de usuario nuevo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Buscar un rol</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver todos los roles</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link">
+                                <i class="fa fa-mobile"></i>Clientes
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Ingresar un nuevo cliente</a>
+                                </li>
+                                <li>
+                                    <a href="#">Buscar un cliente</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver todos lo clientes</a>
+                                </li>
+                                <li>
+                                    <a href="#">Buscar un grupo de clientes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link">
+                                <i class="fa fa-globe"></i>Orden de trabajo
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Crear listas de materiales, herramientas o equipo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Buscar una lista</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver todas las listas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link">
+                                <i class="fa fa-globe"></i>Inventario
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Ingresar categorías</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver categorías</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar unidades de medida</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver unidades de medida</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar modelo y marca del equipo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver modelo y marca del equipo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar material</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver el material</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar equipo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver equipo</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ingresar herramientas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ver herramientas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link">
+                                <i class="fa fa-globe"></i>Reportes
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">Ordenes de trabajo según su tipo y fecha</a>
+                                </li>
+                                <li>
+                                    <a href="#">Orden de trabajo de un cliente y una fecha en específico</a>
+                                </li>
+                                <li>
+                                    <a href="#">Consumo de materiales y equipo durante un mes establecido</a>
+                                </li>
+                                <li>
+                                    <a href="#">Inventario agotado</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 0%">
+                    <li>
+                        <a href="#" style="color: white !important; font-size: 18px;">
+                            <span class="glyphicon glyphicon-user"></span> Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3>Ingresar Marca y Modelo</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h4 style="color: black; margin-left: -54%">Nombre:</h4>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="text" class="form-control" id="model" placeholder="Modelo">
+                        </div>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                          <input type="text" class="form-control" id="brand" placeholder="Marca">
+                      </div>
+                        <a href="" type="submit" class="btn btn-ttc">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3>Marca y Modelo</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover" style="color: rgb(14, 14, 14); ">
+                            <thead class="thead">
+                                <tr>
+                                    <th >Modelo</th>
+                                    <th >Marca</th>
+                                    <th >Editar</th>
+                                    <th >Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-2 text-center">
+        <br>
+        <h4 class="margin">TVO Seguridad Electronica</h4>
+    </div>
+    <script src="showCategories.js"></script>
+</body>
+
+</html>
