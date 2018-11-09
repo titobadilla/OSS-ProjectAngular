@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../../model/client.model';
+import { Router } from '@angular/router';
+import { InsertClientService } from '../../client/insert-client/insert-client-service';
 
 @Component({
   selector: 'app-insert-client',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertClientComponent implements OnInit {
 
-  constructor() { }
+  client: Client;
+
+  constructor(private router: Router, private insertClientService: InsertClientService) { }
 
   ngOnInit() {
+  }
+
+  insert(){
+    this.insertClientService.insertClient(this.client).subscribe(
+      (data:Client) =>{
+        this.client = data;
+      }
+    )
   }
 
 }
