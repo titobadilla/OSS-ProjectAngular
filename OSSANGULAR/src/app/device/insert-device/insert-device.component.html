@@ -37,48 +37,43 @@
                       </div>
 
                         <div class="col-sm-6">
-                            <label for="estado">Elija un estado</label>
+                            <label >Elija un estado</label>
                             <div class="form-group"  style="width: 75%; margin-left: 15%">
-                                <ng-select [items]="cities"
+                                <ng-select [items]="states"
                                 bindLabel="name"
-                                placeholder="Select city"
-                                [(ngModel)]="selectedCity">
+                                bindValue="id"
+                                placeholder="Seleccione un estado"
+                                [(ngModel)]="device.state.id">
                                  </ng-select>
                              </div>
 
-                             <label for="estado">Elija una categoría</label>
+                             <label>Elija una categoría</label>
                             <div class="form-group"  style="width: 75%; margin-left: 15%">
-                                <ng-select [items]="cities"
+                                <ng-select [items]="categories"
                                 bindLabel="name"
-                                placeholder="Select city"
-                                [(ngModel)]="selectedCity">
+                                bindValue="id"
+                                placeholder="Seleccione una categoría"
+                                [(ngModel)]="device.category.id">
                                  </ng-select>
                              </div>
 
-                             <label for="estado">Elija una marca</label>
+                             <label>Elija modelo y marca</label>
                             <div class="form-group"  style="width: 75%; margin-left: 15%">
-                                <ng-select [items]="cities"
+                                <ng-select [items]="brandsModels"
                                 bindLabel="name"
-                                placeholder="Select city"
-                                [(ngModel)]="selectedCity">
+                                bindValue="id"
+                                placeholder="Seleccione una marca"
+                                [(ngModel)]="device.brand.id">
                                  </ng-select>
                              </div>
-
-                             <label for="estado">Elija un modelo</label>
-                            <div class="form-group"  style="width: 75%; margin-left: 15%">
-                                <ng-select [items]="cities"
-                                bindLabel="name"
-                                placeholder="Select city"
-                                [(ngModel)]="selectedCity">
-                                 </ng-select>
-                             </div>
-
-                             <label for="estado">Elija una unidad de medida</label>
+                             
+                             <label >Elija una unidad de medida</label>
                              <div class="form-group"  style="width: 75%; margin-left: 15%">
-                                 <ng-select [items]="cities"
+                                 <ng-select [items]="units"
                                  bindLabel="name"
-                                 placeholder="Select city"
-                                 [(ngModel)]="selectedCity">
+                                 bindValue="id"
+                                 placeholder="Seleccione una unidad"
+                                 [(ngModel)]="device.unit.id">
                                   </ng-select>
                               </div>
 
