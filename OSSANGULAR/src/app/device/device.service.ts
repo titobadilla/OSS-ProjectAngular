@@ -16,7 +16,7 @@ export class DeviceService {
   constructor(private http: HttpClient) { }
 
   public insertDevice(device:Device):Observable<Device>{
-    return this.http.post<Device>(this.URLAPI+'device',device );
+    return this.http.post<Device>(this.URLAPI+'device/',device );
   }
 
   public getAllDevices():Observable<Device[]>{

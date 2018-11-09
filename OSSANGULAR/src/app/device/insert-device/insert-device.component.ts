@@ -10,18 +10,32 @@ import { Device } from '../../model/device.model';
 export class InsertDeviceComponent {
 
   device:Device=new Device();
-  cities = [
-    {id: 1, name: 'Vilnius'},
-    {id: 2, name: 'Kaunas'},
-    {id: 3, name: 'Pavilnys', disabled: true},
-    {id: 4, name: 'Pabradė'},
-    {id: 5, name: 'Klaipėda'}
+  states = [
+    {id: 1, name: 'Bueno'}
 ];
-selectedCity: any;
+selectedState:number;
+
+categories = [
+  {id: 5, name: 'Camaras'}
+];
+selectedCategory:number;
+
+brandsModels = [
+  {id: 1, name: 'Cisco IP'}
+];
+selectedBrandModel:number;
+
+units = [
+  {id: 1, name: 'Unidades'}
+];
+selectedUnit:number;
+
+hola:number;
 
   constructor(private deviceService:DeviceService) { }
 
   public createDevice(){
+    
     this.deviceService.insertDevice(this.device).subscribe();
   }
 
