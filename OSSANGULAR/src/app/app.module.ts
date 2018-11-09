@@ -20,6 +20,7 @@ import { UpdateMeasurementUnitComponent } from './measurement-unit/update-measur
 import { InsertInventoryCategoryComponent } from './inventory-category/insert-inventory-category/insert-inventory-category.component';
 import { SearchInventoryCategoryComponent } from './inventory-category/search-inventory-category/search-inventory-category.component';
 import { UpdateInventoryCategoryComponent } from './inventory-category/update-inventory-category/update-inventory-category.component';
+import { UpdateDeviceComponent } from './device/update-device/update-device.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { UpdateInventoryCategoryComponent } from './inventory-category/update-in
     UpdateMeasurementUnitComponent,
     InsertInventoryCategoryComponent,
     SearchInventoryCategoryComponent,
-    UpdateInventoryCategoryComponent
+    UpdateInventoryCategoryComponent,
+    UpdateDeviceComponent
   ],
   imports: [
     BrowserModule,
