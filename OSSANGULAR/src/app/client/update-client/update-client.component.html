@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Operation of Security System</title>
+
+</head>
+
+<body background="/src/assets/fondo2.jpg">
+ <div class="panel panel-default text-center">
+    <div class="panel-heading">
+        <h3>Editar Unidad de Medida</h3>
+    </div>
+    <div class="panel-body">
+        <h4 style="color: black; margin-left: -54%">Nombre:</h4>
+        <div class="form-group" style="width: 75%; margin-left: 15%">
+            <input type="text" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="measurementUnit.name" name=measurementUnit>
+        </div>
+        <a type="submit" class="btn btn-ttc" (click)="updateMeasurementUnit()">Editar</a>
+    </div>
+</div>
+
+</body>
+
+</html>

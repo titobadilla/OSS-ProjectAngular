@@ -20,7 +20,9 @@ import { UpdateMeasurementUnitComponent } from './measurement-unit/update-measur
 import { InsertInventoryCategoryComponent } from './inventory-category/insert-inventory-category/insert-inventory-category.component';
 import { SearchInventoryCategoryComponent } from './inventory-category/search-inventory-category/search-inventory-category.component';
 import { UpdateInventoryCategoryComponent } from './inventory-category/update-inventory-category/update-inventory-category.component';
-import { UpdateDeviceComponent } from './device/update-device/update-device.component';
+import { InsertClientComponent } from './client/insert-client/insert-client.component';
+import { UpdateClientComponent } from './client/update-client/update-client.component';
+import { DeleteClientComponent } from './client/delete-client/delete-client.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { UpdateDeviceComponent } from './device/update-device/update-device.comp
     InsertInventoryCategoryComponent,
     SearchInventoryCategoryComponent,
     UpdateInventoryCategoryComponent,
-    UpdateDeviceComponent
+    InsertClientComponent,
+    UpdateClientComponent,
+    DeleteClientComponent
   ],
   imports: [
     BrowserModule,
