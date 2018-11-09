@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
+import { HttpClientModule } from '@angular/common/http';
 
+=======
 
+import { HttpClientModule} from '@angular/common/http';
+>>>>>>> af8f2b66d21ee833131970e5942a5460a92f21e5
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
 import { InventoryCategoryComponent } from './inventory-category/inventory-category.component';
@@ -12,7 +17,9 @@ import { DeviceStateComponent } from './device-state/device-state.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
+import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +32,14 @@ import { InsertDeviceComponent } from './device/insert-device/insert-device.comp
     DeviceStateComponent,
     MenuComponent,
     HomeAdminComponent,
+    InsertMeasurementUnitComponent,
+    InventoryCategoryComponent,
     InsertDeviceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

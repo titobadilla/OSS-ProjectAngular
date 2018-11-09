@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceService } from '../device.service';
 
 @Component({
   selector: 'app-insert-device',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertDeviceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private deviceService:DeviceService) { }
 
   ngOnInit() {
   }
