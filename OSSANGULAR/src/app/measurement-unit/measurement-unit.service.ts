@@ -13,12 +13,15 @@ export class MeasurementUnitService {
   constructor(private http: HttpClient) { }
 
   public insertMeasurementUnit (measurementUnit: MeasurementUnit){
-    console.log(measurementUnit.id+ " "+measurementUnit.name)
     return this.http.post(this.url+'/addMeasurementUnit/',measurementUnit);
   }
 
   
   public getAllMeasurementUnits(){
     return this.http.get(Environment.apiUrl+'measurementunit/');
+  }
+
+  public updateMeasurementUnit(measurementUnit:MeasurementUnit){
+    return this.http.put(this.url+'/addMeasurementUnit/', measurementUnit);
   }
 }
