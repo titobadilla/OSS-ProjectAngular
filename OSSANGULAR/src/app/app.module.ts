@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InsertDeviceComponent } from './device/insert-device/insert-device.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
