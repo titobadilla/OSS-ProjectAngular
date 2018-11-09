@@ -6,7 +6,7 @@ import { ModelBrand } from '../model/modelbrand.model';
 @Component({
   selector: 'app-model-brand',
   templateUrl: './model-brand.component.html',
-  styleUrls: ['./model-brandy.component.css']
+  styleUrls: ['./model-brand.component.css']
 })
 export class ModelBrandComponent implements OnInit {
 
@@ -15,12 +15,12 @@ export class ModelBrandComponent implements OnInit {
 
   constructor(private router: Router, private service: ModelBrandService) { }
 
-  ngOnInit() {
-    this.service.getAllModelBrands().subscribe(
+ngOnInit() {
+   /**  this.service.getAllModelBrands().subscribe(
       (data: ModelBrand[])=>{
         this.modelBrands = data;
       }
-    )
+    )*/
   }
 
   insert(){
