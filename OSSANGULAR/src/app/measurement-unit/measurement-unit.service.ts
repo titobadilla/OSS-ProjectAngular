@@ -14,7 +14,7 @@ export class MeasurementUnitService {
 
   public insertMeasurementUnit (measurementUnit: MeasurementUnit){
     console.log(measurementUnit.id+ " "+measurementUnit.name)
-    return this.http.post(this.url+'addMeasurementUnit/',measurementUnit);
+    return this.http.post(this.url+'/addMeasurementUnit/',measurementUnit);
   }
 
   
