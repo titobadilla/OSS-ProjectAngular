@@ -21,7 +21,7 @@ export class ModelBrandService {
   }
 
   public updateModelBrand(modelBrand:ModelBrand){
-    return this.http.put(this.url+'/updateModelBrand'+ modelBrand);
+    return this.http.put(this.url+'/updateModelBrand', modelBrand);
   }
 
   public deleteCategory(modelBrandId:Number){
