@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-2">
-        <div class="container" style="margin-top: 75%;">
+        <div class="container" style="margin-top: 30%;margin-left: 90%">
             <div class="col-sm-6">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
@@ -9,36 +9,36 @@
                     <div class="panel-body">
                         <div class="col-sm-6">
 
-                          <label for="serie">Número de Serie</label>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <label style="align-content: center" for="serie">Número de Serie</label>
+                        <div class="form-group" style="width: 90%; margin-left: 15%">
                             <input type="text" class="form-control" name="serie"  placeholder="Número de serie" required [(ngModel)]="device.serialNumber" >
                         </div>
 
                         <label for="nombre">Nombre</label>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <div class="form-group" style="width: 90%; margin-left: 15%">
                             <input type="text" class="form-control" name="nombre"  placeholder="Nombre" required [(ngModel)]="device.name" >
                         </div>
 
                         <label for="modelo">Modelo de fabricante</label>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <div class="form-group" style="width: 90%; margin-left: 15%">
                             <input type="text" class="form-control" name="modelo"  placeholder="Modelo de fabricante" required [(ngModel)]="device.manufacturerModel" >
                         </div>
 
                
                         <label for="descripcion">Descripción</label>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <div class="form-group" style="width: 90%; margin-left: 15%">
                             <input type="text" class="form-control" name="descripcion" placeholder="Descripción" required [(ngModel)]="device.description" >
                         </div>
 
                         <label for="cantidad">Cantidad</label>
-                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                        <div class="form-group" style="width: 90%; margin-left: 15%">
                             <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" required [(ngModel)]="device.quantity" >
                         </div>
                       </div>
 
                         <div class="col-sm-6">
                             <label >Elija un estado</label>
-                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                            <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="states"
                                 bindLabel="name"
                                 bindValue="id"
@@ -48,7 +48,7 @@
                              </div>
 
                              <label>Elija una categoría</label>
-                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                            <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="categories"
                                 bindLabel="name"
                                 bindValue="id"
@@ -58,7 +58,7 @@
                              </div>
 
                              <label>Elija modelo y marca</label>
-                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                            <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="brandsModels"
                                 bindLabel="name"
                                 bindValue="id"
@@ -68,7 +68,7 @@
                              </div>
                              
                              <label >Elija una unidad de medida</label>
-                             <div class="form-group"  style="width: 75%; margin-left: 15%">
+                             <div class="form-group"  style="width: 90%; margin-left: 15%">
                                  <ng-select [items]="units"
                                  bindLabel="name"
                                  bindValue="id"
