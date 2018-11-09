@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
 import { InventoryCategoryComponent } from './inventory-category/inventory-category.component';
@@ -14,6 +14,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
 import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
+
 
 @NgModule({
   declarations: [
