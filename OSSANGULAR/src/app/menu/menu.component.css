@@ -1,5 +1,6 @@
-/* CSS del menú*/
-* {
+ /* CSS del menú*/
+ * {
+	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -19,15 +20,33 @@ a {
 	text-decoration: none;
 }
 
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+h1 {
+ 	color: #FFF;
+ 	
+ 	font-weight: 300;
+ 	text-align: center;
+ 	margin-top: 40px;
+ }
+
+h1 a {
+ 	color: #96C322;
+ 	font-size: 16px;
+ }
+
+
 .container{
   width: 100%; 
-  height: 900px; 
+  height: 1000px; 
   background-color: #4D4D4D; 
- 
+  margin-left: -5%
 }
 
-.accordion {
+ .accordion {
 	 width: 100%;
+	 
  	background: #4D4D4D;
  	-webkit-border-radius: 4px;
  	-moz-border-radius: 4px;
@@ -49,6 +68,8 @@ a {
 	transition: all 0.4s ease;
 }
 
+
+
 .accordion li:last-child .link {
 	border-bottom: 0;
 }
@@ -68,6 +89,7 @@ a {
 	right: 12px;
 	left: auto;
 	font-size: 16px;
+	color: #FFF;
 }
 
 .accordion li.open .link {
@@ -82,10 +104,10 @@ a {
 	-ms-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
+	color: #FFF;
 }
 
 .accordion li.default .submenu {display: block;}
-
 /**
  * Submenu
  -----------------------------*/
@@ -115,10 +137,11 @@ a {
  	color: #FFF;
  }
 
+
  /*Contenedor del menú*/
 
  #menu{
 	margin-top: -20px;
-	margin-left: -50px;
+	margin-left: -35px;
  }
 
