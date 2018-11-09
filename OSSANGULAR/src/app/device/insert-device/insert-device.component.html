@@ -1,42 +1,101 @@
-<div class="container-fluid">
-  <div class="row content">
-      <div class="col-sm-3">
-      </div>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="container" style="margin-top: 75%;">
+            <div class="col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3>Ingresar Equipo</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-6">
 
-      <div class="col-sm-2"></div>
-      <div class="col-sm-4">
-          <br>
-          <div id="pricing" class="container-fluid">
-              <div class="row slideanim">
-                  <div class="panel panel-default text-center">
-                      <div class="panel-heading">
-                          <h2>Ingresar herramienta</h2>
+                          <label for="serie">Número de Serie</label>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="text" class="form-control" name="serie"  placeholder="Número de serie" required [(ngModel)]="device.serialNumber" >
+                        </div>
+
+                        <label for="nombre">Nombre</label>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="text" class="form-control" name="nombre"  placeholder="Nombre" required [(ngModel)]="device.name" >
+                        </div>
+
+                        <label for="modelo">Modelo de fabricante</label>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="text" class="form-control" name="modelo"  placeholder="Modelo de fabricante" required [(ngModel)]="device.manufacturerModel" >
+                        </div>
+
+               
+                        <label for="descripcion">Descripción</label>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="text" class="form-control" name="descripcion" placeholder="Descripción" required [(ngModel)]="device.description" >
+                        </div>
+
+                        <label for="cantidad">Cantidad</label>
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" required [(ngModel)]="device.quantity" >
+                        </div>
                       </div>
-                      <div class="panel-body">
-                          <h4 style="color: black; margin-left: -54%">Nombre:</h4>
-                          <div class="form-group" style="width: 75%; margin-left: 15%">
 
-                              <input type="text" class="form-control" id="id" placeholder="Nombre">
-                          </div>
-                          <h4 style="color: black; margin-left: -35%">Unidad de medida:</h4>
-                          <div class="form-group" style="width: 75%; margin-left: 15%">
-                              <input type="text" class="form-control" id="name" placeholder="Unidad de medida">
-                          </div>
-                          <h4 style="color: black; margin-left: -52%">Cantidad:</h4>
-                          <div class="form-group" style="width: 75%; margin-left: 15%">
-                              <input type="number" min="1" class="form-control" id="unit" placeholder="Cantidad">
-                          </div>
-                          <h4 style="color: black; margin-left: -46%">Descripción:</h4>
-                          <div class="form-group" style="width: 75%; margin-left: 15%">
-                              <textarea type="text" class="form-control" id="description" placeholder="Descripción de la herramienta"></textarea>
-                          </div>
+                        <div class="col-sm-6">
+                            <label for="estado">Elija un estado</label>
+                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                                <ng-select [items]="cities"
+                                bindLabel="name"
+                                placeholder="Select city"
+                                [(ngModel)]="selectedCity">
+                                 </ng-select>
+                             </div>
 
-                          <a href="" type="submit" class="btn btn-ttc">Ingresar</a>
-                      </div>
+                             <label for="estado">Elija una categoría</label>
+                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                                <ng-select [items]="cities"
+                                bindLabel="name"
+                                placeholder="Select city"
+                                [(ngModel)]="selectedCity">
+                                 </ng-select>
+                             </div>
+
+                             <label for="estado">Elija una marca</label>
+                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                                <ng-select [items]="cities"
+                                bindLabel="name"
+                                placeholder="Select city"
+                                [(ngModel)]="selectedCity">
+                                 </ng-select>
+                             </div>
+
+                             <label for="estado">Elija un modelo</label>
+                            <div class="form-group"  style="width: 75%; margin-left: 15%">
+                                <ng-select [items]="cities"
+                                bindLabel="name"
+                                placeholder="Select city"
+                                [(ngModel)]="selectedCity">
+                                 </ng-select>
+                             </div>
+
+                             <label for="estado">Elija una unidad de medida</label>
+                             <div class="form-group"  style="width: 75%; margin-left: 15%">
+                                 <ng-select [items]="cities"
+                                 bindLabel="name"
+                                 placeholder="Select city"
+                                 [(ngModel)]="selectedCity">
+                                  </ng-select>
+                              </div>
+
+                           
+                        </div>
+                                                                   
+
+                        
+                    </div>
+                  <div class="container-fluid">
+                     <a type="button" class="btn btn-ttc btn-block" (click)="createDevice()">Ingresar</a>
                   </div>
-              </div>
-          </div>
-      </div>
-
+                  <br>
+                   
+                </div>
+            </div>
+           
+        </div>
     </div>
-  </div>
+</div>

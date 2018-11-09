@@ -11,11 +11,12 @@ import { DeviceComponent } from './device/device.component';
 import { DeviceStateComponent } from './device-state/device-state.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
-<<<<<<< HEAD
+
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
-=======
 import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
->>>>>>> af8f2b66d21ee833131970e5942a5460a92f21e5
+
+
+
 
 
 const routes: Routes = [
