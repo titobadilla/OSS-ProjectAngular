@@ -12,6 +12,7 @@ import { DeviceStateComponent } from './device-state/device-state.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
+import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app.routing.module';
     DeviceComponent,
     DeviceStateComponent,
     MenuComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    InsertDeviceComponent
   ],
   imports: [
     BrowserModule,
