@@ -7,18 +7,19 @@ import { Client } from '../../model/client.model';
   providedIn: 'root'
 })
 
-export class UpdateClientService{
+export class InsertClientService{
 
     httpOptions = {
         headers : new HttpHeaders({'Content-Type': 'application/json'})
       };
       
     constructor(private http: HttpClient) { }
-    
-      private requestMaping = 'client/';
-      private url = Environment.apiUrl + this.requestMaping;
 
-      public updateClient(client:Client){
-        return this.http.put(this.url+'updateClient', client);
+    private requestMaping = 'client/';
+    private url = Environment.apiUrl + this.requestMaping;
+  
+    
+    public insertClient(client:Client){
+        return this.http.post(this.url+'insert/', client);
       }
 }
