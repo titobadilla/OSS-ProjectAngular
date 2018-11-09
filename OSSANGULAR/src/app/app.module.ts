@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
 import { InventoryCategoryComponent } from './inventory-category/inventory-category.component';
@@ -12,6 +12,7 @@ import { DeviceStateComponent } from './device-state/device-state.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AppRoutingModule } from './app.routing.module';
+import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,14 @@ import { AppRoutingModule } from './app.routing.module';
     DeviceComponent,
     DeviceStateComponent,
     MenuComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    InsertMeasurementUnitComponent,
+    InventoryCategoryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
