@@ -1,12 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-=======
-
-import { HttpClientModule} from '@angular/common/http';
->>>>>>> af8f2b66d21ee833131970e5942a5460a92f21e5
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
 import { InventoryCategoryComponent } from './inventory-category/inventory-category.component';
@@ -39,7 +34,8 @@ import { InsertDeviceComponent } from './device/insert-device/insert-device.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
