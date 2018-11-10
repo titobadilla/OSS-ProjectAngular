@@ -9,20 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class InventoryCategoryService {
 
+  
+  URLAPI=Environment.apiUrl;
+
   constructor(private http: HttpClient) { }
 
-  private requestMapping = 'inventorycategory/';
 
-  private url = Environment.apiUrl + this.requestMapping;
 
   public insertCategory (inventoryCategory:InventoryCategory){
     console.log(inventoryCategory.id+ "  "+inventoryCategory.name);
-    return this.http.post(this.url+'insert',inventoryCategory);
+    return this.http.post(this.URLAPI+'/inventoryCategory/insert',inventoryCategory);
   }
 
   
   public getAllCategories():Observable<InventoryCategory[]>{
-    return this.http.get<InventoryCategory[]>(this.url);
+    return this.http.get<InventoryCategory[]>(this.URLAPI+'inventoryCategory/');
   }
 
 }
