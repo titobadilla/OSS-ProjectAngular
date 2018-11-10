@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from '../../model/client.model';
+import { Router } from '@angular/router';
+import { DeleteClientService } from '../../client/delete-client/delete-client-service';
 
 @Component({
   selector: 'app-delete-client',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteClientComponent implements OnInit {
 
-  constructor() { }
+  public clients: Client[] = new Array<Client>();
+  public client: Client;
+
+  constructor(private router: Router, private deleteClientService: DeleteClientService) { }
 
   ngOnInit() {
+  }
+
+  delete(){
+    this.deleteClientService.deleteClient(this.client.id).subscribe(
+      (data:Client) =>{
+        this.client = data;
+      }
+    )
   }
 
 }

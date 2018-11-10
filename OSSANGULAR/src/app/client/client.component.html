@@ -32,8 +32,8 @@
                                         <td>{{client.id}}</td>
                                         <td>{{client.name}}</td>
                                         <td>{{client.contactName}}</td>
-                                        <a href="">Editar</a>
-                                        <a href="">Eliminar</a>
+                                        <a href="" value="{{client.id}}">Editar</a>
+                                        <a (click)='delete()'>Eliminar</a>
                                     </tr>
                                 </tbody>
                             </table>
