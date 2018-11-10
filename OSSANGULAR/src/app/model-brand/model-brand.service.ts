@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Environment} from '../app.environment';
 import { ModelBrand } from '../model/modelbrand.model';
+import { Observable } from 'rxjs';
 @Injectable()
 export class ModelBrandService {
 
@@ -16,8 +17,8 @@ export class ModelBrandService {
     return this.http.post(this.url+'insertModelBrand/',modelBrand);
   }
 
-  public getAllModelBrands(){
-    return this.http.get(Environment.apiUrl+'modelbrand/');
+  public getAllModelBrands():Observable<ModelBrand[]>{
+    return this.http.get<ModelBrand[]>(Environment.apiUrl+'modelbrand/');
   }
 
   public updateModelBrand(modelBrand:ModelBrand){

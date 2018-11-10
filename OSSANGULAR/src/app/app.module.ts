@@ -23,6 +23,12 @@ import { UpdateInventoryCategoryComponent } from './inventory-category/update-in
 import { InsertClientComponent } from './client/insert-client/insert-client.component';
 import { UpdateClientComponent } from './client/update-client/update-client.component';
 import { DeleteClientComponent } from './client/delete-client/delete-client.component';
+import {  ClientService } from './client/client-service';
+import { DeviceService } from './device/device.service';
+import { DeviceStateService } from './device-state/device-state.service';
+import { InventoryCategoryService } from './inventory-category/inventory-category-service';
+import { MeasurementUnitService } from './measurement-unit/measurement-unit.service';
+import { ModelBrandService } from './model-brand/model-brand.service';
 
 
 @NgModule({
@@ -54,7 +60,8 @@ import { DeleteClientComponent } from './client/delete-client/delete-client.comp
     FormsModule,
     NgSelectModule
   ],
-  providers: [],
+  providers: [ClientService,DeviceService,DeviceStateService,
+  InventoryCategoryService,MeasurementUnitService,ModelBrandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

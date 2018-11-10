@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Environment} from '../app.environment';
-import { MeasurementUnit } from './insert-measurement-unit/measurementUnit';
+
+import { Observable } from 'rxjs';
+import { MeasurementUnit } from '../model/measurementunit.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +17,9 @@ export class MeasurementUnitService {
   public insertMeasurementUnit (measurementUnit: MeasurementUnit){
     return this.http.post(this.url+'/addMeasurementUnit/',measurementUnit);
   }
-
   
-  public getAllMeasurementUnits(){
-    return this.http.get(Environment.apiUrl+'measurementunit/');
+  public getAllMeasurementUnits():Observable<MeasurementUnit[]>{
+    return this.http.get<MeasurementUnit[]>(Environment.apiUrl+'measurementunit/');
   }
 
   public updateMeasurementUnit(measurementUnit:MeasurementUnit){

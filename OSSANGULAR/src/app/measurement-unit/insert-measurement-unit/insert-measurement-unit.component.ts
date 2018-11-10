@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MeasurementUnit } from './measurementUnit';
+
 import {Router} from '@angular/router';
 import { MeasurementUnitService } from '../measurement-unit.service';
+import { MeasurementUnit } from '../../model/measurementunit.model';
 
 
 @Component({

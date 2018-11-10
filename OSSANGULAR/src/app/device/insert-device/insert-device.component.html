@@ -40,7 +40,7 @@
                             <label >Elija un estado</label>
                             <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="states"
-                                bindLabel="name"
+                                bindLabel="state"
                                 bindValue="id"
                                 placeholder="Seleccione un estado"
                                 [(ngModel)]="device.state.id">
@@ -60,7 +60,7 @@
                              <label>Elija modelo y marca</label>
                             <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="brandsModels"
-                                bindLabel="name"
+                                bindLabel='model'
                                 bindValue="id"
                                 placeholder="Seleccione una marca"
                                 [(ngModel)]="device.brand.id">
