@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { InventoryCategory } from '../../model/inventorycategory.model';
+import { InventoryCategoryService} from '../inventory-category-service';
+
 
 @Component({
   selector: 'app-insert-inventory-category',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertInventoryCategoryComponent implements OnInit {
 
-  constructor() { }
+  inventoryCategory: InventoryCategory = new InventoryCategory();
+
+  constructor(private router: Router, private service: InventoryCategoryService) { }
 
   ngOnInit() {
+  }
+
+  insert(){
+    this.service.insertCategory(this.inventoryCategory).subscribe(
+      
+      (data:InventoryCategory) =>{
+        console.log("hola");
+        this.inventoryCategory = data;
+     
+      }
+    )
   }
 
 }
