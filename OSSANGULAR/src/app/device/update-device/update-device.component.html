@@ -4,14 +4,14 @@
             <div class="col-sm-6">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <h3>Ingresar Equipo</h3>
+                        <h3>Editar Equipo</h3>
                     </div>
                     <div class="panel-body">
                         <div class="col-sm-6">
 
                         <label style="align-content: center" for="serie">Número de Serie</label>
                         <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" class="form-control" name="serie"  placeholder="Número de serie" required [(ngModel)]="device.serialNumber" >
+                            <input type="text" disabled class="form-control" name="serie"  placeholder="Número de serie" [(ngModel)]="idDevice" >
                         </div>
 
                         <label for="nombre">Nombre</label>
@@ -40,7 +40,7 @@
                             <label >Elija un estado</label>
                             <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="states"
-                                bindLabel="name"
+                                bindLabel="state"
                                 bindValue="id"
                                 placeholder="Seleccione un estado"
                                 [(ngModel)]="device.state.id">
@@ -60,7 +60,7 @@
                              <label>Elija modelo y marca</label>
                             <div class="form-group"  style="width: 90%; margin-left: 15%">
                                 <ng-select [items]="brandsModels"
-                                bindLabel="name"
+                                bindLabel="brand"
                                 bindValue="id"
                                 placeholder="Seleccione una marca"
                                 [(ngModel)]="device.brand.id">
@@ -84,7 +84,7 @@
                         
                     </div>
                   <div class="container-fluid">
-                     <a type="button" class="btn btn-ttc btn-block" (click)="createDevice()">Ingresar</a>
+                     <a type="button" class="btn btn-ttc btn-block" (click)="editDevice()">Editar</a>
                   </div>
                   <br>
                    

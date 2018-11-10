@@ -14,6 +14,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
 import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measurement-unit/insert-measurement-unit.component';
 import { UpdateMeasurementUnitComponent } from './measurement-unit/update-measurement-unit/update-measurement-unit.component';
+import { UpdateDeviceComponent } from './device/update-device/update-device.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: "app-menu", component: MenuComponent, outlet:'menu' },
     {path: "app-device", component: DeviceComponent } ,  
     {path: "app-insert-device", component: InsertDeviceComponent },
+    {path: "app-update-device", component: UpdateDeviceComponent },
     {path: "app-home-admin", component: HomeAdminComponent },
     {path: "app-client", component: ClientComponent},
     {path: "app-insert-measurement-unit", component: InsertMeasurementUnitComponent},
