@@ -12,7 +12,7 @@
                     <div class="form-group" style="width: 75%; margin-left: 15%">
                         <input type="inventoryCategoryName" class="form-control" id="name" placeholder="Nombre" [(ngModel)]="inventoryCategory.name" name="name" >
                     </div>
-                    <a  type="submit"  class="btn btn-ttc" (click)="insert()">Ingresar</a>
+                    <a href="/app-insert-inventory-category" type="submit"  class="btn btn-ttc" (click)="insert()">Ingresar</a>
                 </div>
             </div>
         </div>
@@ -36,14 +36,19 @@
                     <table class="table table-hover" style="color: rgb(14, 14, 14); ">
                         <thead class="thead">
                             <tr>
-                                <th>Nombre</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th style="text-align: center" >Nombre</th>
+                                <th></th>
+                                <th style="text-align: center">Editar</th>
+                                <th style="text-align: center">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody class="tbody">
-                            <tr>
-                            </tr>
+                            <tr *ngFor="let inventoryCategory of inventoryCategories">
+                                <td>{{inventoryCategory.name}}</td>
+                                <td></td>
+                                <td><a href="/app-insert-inventory-category" type="submit"  class="btn btn-ttc" (click)="update()" ><img src="assets/editar.png" style="width: 30px;"></a></td>
+                                <td><a href="/app-insert-inventory-category" type="submit"  class="btn btn-ttc" (click)="delete()"><img src="assets/basura.png" style="width: 30px;"></a></td>
+                              </tr>
                         </tbody>
                     </table>
                 </div>
