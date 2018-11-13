@@ -34,7 +34,8 @@
                                 <tbody class="tbody">
                                     <tr *ngFor="let measurementUnit of measurementUnits">
                                         <td>{{measurementUnit.name}}</td>
-                                        <a href="/app-update-measurement-unit">Editar</a>
+                                        <td><a href="/app-update-measurement-unit" type="submit"  class="btn btn-ttc" (click)="update()" ><img src="assets/editar.png" style="width: 30px;"></a></td>
+                                        <td><a href="/app-insert-inventory-category" type="submit"  class="btn btn-ttc" (click)="delete()"><img src="assets/basura.png" style="width: 30px;"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
