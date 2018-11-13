@@ -40,9 +40,10 @@ export class InsertDeviceComponent {
      this.units=data;
    });
 
-   this.brandService.getAllModelBrands().subscribe(data=>{
+   /*this.brandService.getAllModelBrands().subscribe(data=>{
      this.brandsModels=data;
-   });
+   });*/
+
    this.categoryService.getAllCategories().subscribe(data=>{
     this.categories=data;
    });
