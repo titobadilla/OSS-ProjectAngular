@@ -13,8 +13,8 @@ export class UpdateMeasurementUnitComponent implements OnInit {
   constructor(private router: Router, private service: MeasurementUnitService) { }
 
   ngOnInit() {
-   this.measurementUnit.id = parseInt(localStorage.getItem('muid'));
-   this.measurementUnit.name = localStorage.getItem('muname');
+   this.measurementUnit.id =1;
+   this.measurementUnit.name = "hello";
 
   }
 

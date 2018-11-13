@@ -1,15 +1,25 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModelBrandService } from './model-brand.service';
+import { ModelBrandComponent } from './model-brand.component';
 
-describe('ModelBrandService', () => {
-  beforeEach(() => {
+describe('ModelBrandComponent', () => {
+  let component: ModelBrandComponent;
+  let fixture: ComponentFixture<ModelBrandComponent>;
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ModelBrandService]
-    });
+      declarations: [ ModelBrandComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ModelBrandComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should be created', inject([ModelBrandService], (service: ModelBrandService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
