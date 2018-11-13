@@ -8,20 +8,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InventoryCategoryService {
-
   
   URLAPI=Environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
-
-
   public insertCategory (inventoryCategory:InventoryCategory){
-    console.log(inventoryCategory.id+ "  "+inventoryCategory.name);
     return this.http.post(this.URLAPI+'/inventoryCategory/insert',inventoryCategory);
   }
 
-  
   public getAllCategories():Observable<InventoryCategory[]>{
     return this.http.get<InventoryCategory[]>(this.URLAPI+'inventoryCategory/');
   }
