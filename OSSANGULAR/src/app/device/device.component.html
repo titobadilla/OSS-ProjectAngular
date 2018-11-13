@@ -1,3 +1,137 @@
-<p>
-  device works!
-</p>
+<div *ngIf="primario">
+<div class="panel panel-default text-center">
+    <div class="panel-heading">
+        <h3>Lista de Equipos</h3>
+    </div>
+    <div class="panel-body">
+  <!--      <br><br>
+        <div class="columns">
+          <div class="column col-12">
+            <div class="form-group">
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" [checked]="true" (change)="toggle('paginationEnabled', $event.target.checked)">
+                <i class="form-icon"></i> Pagination
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" [checked]="true" (change)="toggle('headerEnabled', $event.target.checked)">
+                <i class="form-icon"></i> Column names
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" [checked]="true" (change)="toggle('searchEnabled', $event.target.checked)">
+                <i class="form-icon"></i> Search
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" (change)="toggle('collapseAllRows', $event.target.checked)">
+                <i class="form-icon"></i> Collapse rows
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" (change)="toggle('isLoading', $event.target.checked)">
+                <i class="form-icon"></i> Is loading
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" id="checkbox-checkboxes" (change)="toggle('checkboxes', $event.target.checked)">
+                <i class="form-icon"></i> Checkboxes
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" id="checkbox-draggable" (change)="toggle('draggable', $event.target.checked)">
+                <i class="form-icon"></i> Draggable
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" id="checkbox-fixedColumnWidth" (change)="toggle('fixedColumnWidth', $event.target.checked)">
+                <i class="form-icon"></i> Fixed column
+              </label>
+              <label class="form-checkbox form-inline">
+                <input type="checkbox" id="checkbox-logger" (change)="toggle('logger', $event.target.checked)">
+                <i class="form-icon"></i> Logger
+              </label>
+            </div>
+          </div>
+        </div>
+        -->
+        <div class="columns">
+          <div class="column col-12">
+            <ngx-table [configuration]="configuration" [detailsTemplate]="detailsTemplateRef" [data]="devices" [columns]="columns"
+            >
+                <ng-template let-row>
+                    <td>
+                      <div class="font-small">
+                       {{row.serialNumber}}
+                      </div>
+                    </td>
+                    <td>
+                        <span class="font-small">{{row.name}}</span>
+                    </td>
+                    <td>
+                      <span class="font-small">{{row.manufacturerModel}}</span>
+                    </td>
+                    <td>
+                      <span class="font-small">{{row.description}}</span>
+                    </td>
+                    <td>
+                      <span class="font-small">{{row.state.state}}</span>
+                    </td>
+                    
+                    <td>
+                      <span class="font-small">{{row.category.name}}</span>
+                    </td>
+                    
+                    <td>
+                      <span class="font-small">{{row.brand.model}}</span>
+                    </td>
+                    
+                    <td>
+                      <span class="font-small">{{row.brand.brand}}</span>
+                    </td>
+  
+                    <td>
+                        <span class="font-small">{{row.unit.name}}</span>
+                    </td>
+  
+                    <td>
+                      <button class="btn btn-primary btn-sm" (click)="edit(row)">
+                        <img src="./assets/editar.png" alt="" width="20px" height="20px">
+                      </button>
+                    </td>
+  
+                    <td>
+                        <button class="btn btn-primary btn-sm" (click)="showModal(row)">
+                            <img src="./assets/basura.png" alt="" width="20px" height="20px">
+                          </button>
+                      </td>
+                  </ng-template>
+            </ngx-table>
+  
+           
+            
+          </div>
+        </div>
+        
+    </div>
+  </div>
+  
+  
+  <div *ngIf="modalDelete" class="modal fade in" role="dialog" id="gridTools" tabindex="-1" aria-labelledby="gridModalLabel" style="display:block;padding-right: 15px;">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" (click)="hideModal()" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 style="color: black;" class="modal-title" id="gridModalLabel">Eliminar equipo</h4>
+              </div>
+              <div class="modal-body">
+                  <h3 style="color: black">¿Está seguro que desea eliminar el equipo con número de serie {{deviceDelete.serialNumber}}?</h3>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" (click)="hideModal()">Cancelar</button>
+                  <button type="button" class="btn btn-primary" (click)="aceptDelete()">Aceptar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+   </div>
+
+  <div *ngIf="secundario">
+    <app-update-device [serialNumberDevice]="serialNumber"></app-update-device>
+  </div>

@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TableModule } from 'ngx-easy-table';
+import { TrendModule } from 'ngx-trend';
+
 
 import { AppComponent } from './app.component';
 import { MeasurementUnitComponent } from './measurement-unit/measurement-unit.component';
@@ -60,7 +63,9 @@ import { UpdateDeviceComponent } from './device/update-device/update-device.comp
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    TableModule,
+    TrendModule
   ],
   providers: [ClientService,DeviceService,DeviceStateService,
   InventoryCategoryService,MeasurementUnitService,ModelBrandService],

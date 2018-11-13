@@ -28,7 +28,7 @@ export class DeviceService {
   }
 
   public updateDevice(device:Device):Observable<Device>{
-    return this.http.put<Device>(this.URLAPI+'device',device);
+    return this.http.put<Device>(this.URLAPI+'device/update',device);
   }
 
   public deleteDevice(serialNumber:String):Observable<Device>{

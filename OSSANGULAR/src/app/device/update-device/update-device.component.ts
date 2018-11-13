@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Device } from '../../model/device.model';
 
 import { DeviceState } from '../../model/devicestate.model';
@@ -16,7 +16,8 @@ import { MeasurementUnit } from '../../model/measurementunit.model';
   templateUrl: './update-device.component.html',
   styleUrls: ['./update-device.component.css']
 })
-export class UpdateDeviceComponent {
+export class UpdateDeviceComponent implements OnInit{
+  @Input() serialNumberDevice:String;
 
   device: Device = new Device();
   idDevice:String;
@@ -29,11 +30,23 @@ export class UpdateDeviceComponent {
   constructor(private deviceService: DeviceService, private unitService: MeasurementUnitService,
     private brandService: ModelBrandService, private categoryService: InventoryCategoryService,
     private deviceStateService: DeviceStateService) {
-    this.traerInicio();
-    this.idDevice=this.device.serialNumber;
-  }
+    this.inicializarDatos();
 
-  public traerInicio() {
+       }
+
+    ngOnInit(){
+      //alert( this.serialNumberDevice);
+      this.deviceService.getByIdDevice(this.serialNumberDevice).subscribe(
+        data=>{
+          this.device=data;
+        }
+      );
+      this.idDevice=this.serialNumberDevice;
+    }
+
+
+  public inicializarDatos() {
+      
     this.deviceStateService.getAllDeviceStates().subscribe(
       data => { this.states = data; }
     );

@@ -1,0 +1,81 @@
+@import "~@Utilidades/css-global/global.css";
+
+	
+tbody tr:hover {		
+    color: black;    
+}
+
+h3{
+    text-align: center;
+}
+
+
+
+
+
+.demo, .demo-2 {
+    position:relative;
+    height:100px;
+    width:500px;
+}
+.demo .form-search, .demo-2 .form-search {
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.demo .form-search input[type=text],
+.demo-2 .form-search input[type=text] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;			
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 100%;
+    border: solid 1px #ccc;
+    padding: 9px 18px;
+    width: 200px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+.demo-2 .form-search input[type=text] {
+    width:60px;
+    position:absolute;
+    right:0px;
+    z-index:1000;
+    padding:8px 12px;
+    cursor:pointer;
+}
+.demo-2 .form-search div.input-group {
+    width:60px;
+}
+.demo .form-search input[type=text]:focus {
+    width: 350px;
+    background-color: #fff;
+}
+.demo-2 .form-search input[type=text]:focus {
+    position:absolute;
+    right:60px;
+    width:250px;
+}
+.demo .form-search button.btn,
+.demo-2 .form-search button.btn {
+    padding:16px 12px;
+    border-radius: 10px;
+    cursor:not-allowed;
+}
+.demo-2 .form-search button.btn {
+  padding:15px 16px;
+}
+
+.circle:before {
+    content: ' \25CF';
+    font-size: 20px;
+  }
+  
+  .row__email {
+    width: 100px;
+  }
+  
+  .row__progressbar {
+    width: 100px;
+  }

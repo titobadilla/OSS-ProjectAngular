@@ -11,7 +11,7 @@
 
                         <label style="align-content: center" for="serie">Número de Serie</label>
                         <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" disabled class="form-control" name="serie"  placeholder="Número de serie" [(ngModel)]="idDevice" >
+                            <input type="text" disabled class="form-control" name="serie"  placeholder="Número de serie" [(ngModel)]="device.serialNumber" >
                         </div>
 
                         <label for="nombre">Nombre</label>
@@ -84,7 +84,7 @@
                         
                     </div>
                   <div class="container-fluid">
-                     <a type="button" class="btn btn-ttc btn-block" (click)="editDevice()">Editar</a>
+                     <a type="button" href="app-device" class="btn btn-ttc btn-block" (click)="editDevice()">Editar</a>
                   </div>
                   <br>
                    
