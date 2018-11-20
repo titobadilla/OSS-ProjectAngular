@@ -27,7 +27,8 @@ const routes: Routes = [
     {path: "app-client", component: ClientComponent},
     {path: "app-insert-measurement-unit", component: InsertMeasurementUnitComponent},
     {path: "app-insert-inventory-category", component: InsertInventoryCategoryComponent},
-    {path: "app-update-measurement-unit", component: UpdateMeasurementUnitComponent}
+    {path: "app-update-measurement-unit", component: UpdateMeasurementUnitComponent},
+    {path: "app-measurement-unit", component:MeasurementUnitComponent}
    ];
 
 @NgModule({

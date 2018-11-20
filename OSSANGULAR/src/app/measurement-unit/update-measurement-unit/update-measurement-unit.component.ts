@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 import { MeasurementUnitService } from '../measurement-unit.service';
 import { MeasurementUnit } from '../../model/measurementunit.model';
@@ -9,16 +9,23 @@ import { MeasurementUnit } from '../../model/measurementunit.model';
   styleUrls: ['./update-measurement-unit.component.css']
 })
 export class UpdateMeasurementUnitComponent implements OnInit {
+  @Input() measurementUnitId:String;
   measurementUnit: MeasurementUnit = new MeasurementUnit();
+  idMeasurementUnit: String;
+
   constructor(private router: Router, private service: MeasurementUnitService) { }
 
   ngOnInit() {
-   this.measurementUnit.id =1;
-   this.measurementUnit.name = "hello";
-
+    this.service.getByIdMeasurementUnit(this.measurementUnitId).subscribe(
+      data=>{
+        this.measurementUnit=data;
+      }
+    );
+    this.idMeasurementUnit= this.measurementUnitId;
   }
 
-  updateMeasurementUnit(){
+  updateMeasurementUnit(measurementUnit: MeasurementUnit){
+    alert("hola");
     this.service.updateMeasurementUnit(this.measurementUnit).subscribe(
       (data:MeasurementUnit) =>{
         this.measurementUnit = data;
