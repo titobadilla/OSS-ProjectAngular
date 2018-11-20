@@ -17,13 +17,13 @@ export class ModelBrandService {
   }
 
   public getAllModelBrand():Observable<ModelBrand[]>{
-    return this.http.get<ModelBrand[]>(this.URLAPI+'modelbrand');
+    return this.http.get<ModelBrand[]>(this.URLAPI+'modelbrand/');
   }
-/*
+
   public getByIdDevice(serialNumber:String):Observable<ModelBrand>{
     return this.http.get<ModelBrand>(this.URLAPI+'modelBrand/'+serialNumber);
   }
-*/
+
   public updateModelBrand(modelBrand:ModelBrand):Observable<ModelBrand>{
     return this.http.put<ModelBrand>(this.URLAPI+'modelBrand',modelBrand);
   }
