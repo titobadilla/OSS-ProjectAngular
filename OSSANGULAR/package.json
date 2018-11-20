@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
+    "@angular/cdk": "^7.0.4",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
@@ -22,6 +23,8 @@
     "@angular/router": "^6.0.3",
     "@ng-select/ng-select": "^2.12.0",
     "core-js": "^2.5.4",
+    "ngx-easy-table": "^7.1.0",
+    "ngx-trend": "^3.4.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
