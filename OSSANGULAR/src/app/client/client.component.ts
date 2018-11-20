@@ -17,13 +17,18 @@ export class ClientComponent implements OnInit {
   constructor(private router: Router, private clientService: ClientService) { }
 
   ngOnInit() {
+    
+  }
+  
+  getAll(){
     this.clientService.getAllClients().subscribe(
       (data: Client[])=>{
         this.clients = data;
       }
     )
   }
-  
+
+
   insert(){
     this.clientService.insertClient(this.client).subscribe(
       (data:Client) =>{
