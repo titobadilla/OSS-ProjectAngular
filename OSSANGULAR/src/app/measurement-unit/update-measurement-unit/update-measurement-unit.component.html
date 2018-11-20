@@ -10,12 +10,12 @@
                     <div class="panel-body">
                         <div class="form-group" style="width: 75%; margin-left: 15%">
                             <label>Nombre Actual</label>
-                            <input type="text" class="form-control" [(ngModel)]="measurementUnit.name">
+                            <input type="text" class="form-control" [(ngModel)]="nameMeasurementUnit" disabled>
                             <BR>
                             <label>Nombre nuevo</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nombre" name=measurementUnit>
+                            <input type="text" class="form-control" id="name" placeholder="Nombre" [(ngModel)]="measurementUnit.name">
                         </div>
-                        <a type="submit" class="btn btn-ttc" style="margin-left: 40%" (click)="updateMeasurementUnit()">Editar</a>
+                        <a type="submit" class="btn btn-ttc" style="margin-left: 40%" (click)="updateMeasurementUnit()" href="app-measurement-unit">Editar</a>
                     </div>
                 </div>
             </div>

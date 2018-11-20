@@ -10,8 +10,9 @@ import { MeasurementUnit } from '../../model/measurementunit.model';
 })
 export class UpdateMeasurementUnitComponent implements OnInit {
   @Input() measurementUnitId:String;
+
   measurementUnit: MeasurementUnit = new MeasurementUnit();
-  idMeasurementUnit: String;
+  nameMeasurementUnit: String;
 
   constructor(private router: Router, private service: MeasurementUnitService) { }
 
@@ -19,13 +20,11 @@ export class UpdateMeasurementUnitComponent implements OnInit {
     this.service.getByIdMeasurementUnit(this.measurementUnitId).subscribe(
       data=>{
         this.measurementUnit=data;
-      }
-    );
-    this.idMeasurementUnit= this.measurementUnitId;
+        this.nameMeasurementUnit=data.name;
+      });
   }
 
-  updateMeasurementUnit(measurementUnit: MeasurementUnit){
-    alert("hola");
+  updateMeasurementUnit(){
     this.service.updateMeasurementUnit(this.measurementUnit).subscribe(
       (data:MeasurementUnit) =>{
         this.measurementUnit = data;
