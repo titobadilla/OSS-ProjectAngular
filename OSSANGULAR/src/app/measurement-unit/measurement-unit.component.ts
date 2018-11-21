@@ -3,6 +3,7 @@ import { UpdateMeasurementUnitComponent } from './update-measurement-unit/update
 import { Router } from '@angular/router';
 import { MeasurementUnitService } from './measurement-unit.service';
 import { MeasurementUnit } from '../model/measurementunit.model';
+import { ConfigService } from './configurationtable.service';
 
 @Component({
   selector: 'app-measurement-unit',
@@ -21,7 +22,15 @@ export class MeasurementUnitComponent implements OnInit {
   primario:boolean=true;
   secundario:boolean=false;
 
-  constructor(private router: Router, private service: MeasurementUnitService) { }
+  columns = [
+    { key: 'name', title: 'Nombre' },
+    { key: 'edit', title: 'Editar' },
+    { key: 'remove', title: 'Eliminar' }
+  ];
+  configuration;
+  constructor(private router: Router, private service: MeasurementUnitService) {
+    this.configuration = ConfigService.config;
+   }
 
   ngOnInit() {
     this.service.getAllMeasurementUnits().subscribe(
@@ -29,6 +38,12 @@ export class MeasurementUnitComponent implements OnInit {
          this.measurementUnits = data;
        }
      ); 
+  }
+
+  toggle(key: string, isChecked: boolean): void {
+    console.log('key: ', key, isChecked);
+    this.configuration[key] = isChecked;
+    this.configuration = { ...this.configuration };
   }
 
   createMeasurementUnit(): void {
