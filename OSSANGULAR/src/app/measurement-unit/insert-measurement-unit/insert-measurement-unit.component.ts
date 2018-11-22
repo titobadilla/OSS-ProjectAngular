@@ -12,17 +12,11 @@ import { MeasurementUnit } from '../../model/measurementunit.model';
 })
 export class InsertMeasurementUnitComponent implements OnInit {
 
-  measurementUnits: MeasurementUnit[] = new Array<MeasurementUnit>();
   measurementUnit: MeasurementUnit = new MeasurementUnit();
   constructor(private router: Router, private service: MeasurementUnitService) { }
 
   ngOnInit() {
 
-    this.service.getAllMeasurementUnits().subscribe(
-      (data: MeasurementUnit[] ) => {
-         this.measurementUnits = data;
-       }
-     ); 
   }
 
   createMeasurementUnit(): void {

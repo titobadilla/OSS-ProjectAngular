@@ -33,6 +33,8 @@ import { InventoryCategoryService } from './inventory-category/inventory-categor
 import { MeasurementUnitService } from './measurement-unit/measurement-unit.service';
 import { ModelBrandService } from './model-brand/model-brand.service';
 import { UpdateDeviceComponent } from './device/update-device/update-device.component';
+import { UpdateModelBrandComponent } from './model-brand/update-model-brand/update-model-brand.component';
+import { InsertModelBrandComponent } from './model-brand/insert-model-brand/insert-model-brand.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { UpdateDeviceComponent } from './device/update-device/update-device.comp
     InsertClientComponent,
     UpdateClientComponent,
     DeleteClientComponent,
-    UpdateDeviceComponent
+    UpdateDeviceComponent,
+    UpdateModelBrandComponent,
+    InsertModelBrandComponent
   ],
   imports: [
     BrowserModule,

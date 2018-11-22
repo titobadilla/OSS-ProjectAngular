@@ -1,10 +1,3 @@
-.btn-ttc,
-.btn-ttc:hover,
-.btn-ttc:active {
- background-color: #1692B8!important;
- color: snow;
-
-}
 body {
     
     line-height: 1.8;
@@ -72,5 +65,3 @@ body {
         .dropdown-toggle {
             color: #fff !important;
         }
-
-      

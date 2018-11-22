@@ -1,3 +1,61 @@
-<p>
-  measurement-unit works!
-</p>
+<div *ngIf="primario">
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="container" style="margin-top: 75%;">
+                <div class="col-sm-4">
+                    <app-insert-measurement-unit></app-insert-measurement-unit>
+                </div>
+                <div class="col-sm-5">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <h3>Unidades de Medida</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ngx-table [configuration]="configuration" [detailsTemplate]="detailsTemplateRef" [data]="measurementUnits"
+                                [columns]="columns">
+                                <ng-template let-row>
+                                    <td>
+                                        <span class="font-small">{{row.name}}</span>
+                                    </td>
+                                    <td>
+                                        <a type="submit" class="btn" (click)="edit(measurementUnit.id)"><img
+                                                src="assets/editar.png" style="width: 30px;"></a>
+                                    </td>
+                                    <td>
+                                        <a type="submit" class="btn"
+                                        (click)="showModal(row)"><img src="assets/basura.png" style="width: 30px;"></a>
+                                    </td>
+                                </ng-template>
+                            </ngx-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="secundario">
+    <app-update-measurement-unit [measurementUnitId]="measurementUnitId"></app-update-measurement-unit>
+</div>
+
+<div *ngIf="modalDelete" class="modal fade in" role="dialog" id="gridTools" tabindex="-1" aria-labelledby="gridModalLabel" style="display:block;padding-right: 20px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="hideModal()" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 style="color: black; margin-left: 28%" class="modal-title" id="gridModalLabel">Eliminar Unidad de Medida</h4>
+                </div>
+                <div class="modal-body">
+                    <h4 style="color: black; margin-left: 3%">¿Está seguro que desea eliminar la unidad de medida {{measurementUnitDelete.name}}?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="hideModal()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="aceptDelete()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
