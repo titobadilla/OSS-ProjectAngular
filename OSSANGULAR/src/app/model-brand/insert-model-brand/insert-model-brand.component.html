@@ -1,0 +1,18 @@
+<div class="panel panel-default text-center">
+  <div class="panel-heading">
+    <h3>Ingresar Modelo y Marca</h3>
+  </div>
+  <div class="panel-body">
+    <h4 style="color: black; margin-left: -54%">Modelo:</h4>
+    <div class="form-group" style="width: 75%; margin-left: 15%">
+      <input type="text" class="form-control" id="model" placeholder="Modelo" required [(ngModel)]="modelBrand.model"
+        name=measurementUnit>
+    </div>
+    <h4 style="color: black; margin-left: -54%">Marca:</h4>
+    <div class="form-group" style="width: 75%; margin-left: 15%">
+      <input type="text" class="form-control" id="brand" placeholder="Marca" required [(ngModel)]="modelBrand.brand"
+        name=modelBrand>
+    </div>
+    <a type="submit" class="btn btn-ttc" (click)="createModelBrand()">Ingresar</a>
+  </div>
+</div>
