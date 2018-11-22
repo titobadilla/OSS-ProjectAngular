@@ -29,4 +29,9 @@ export class MeasurementUnitService {
   public getByIdMeasurementUnit(measurementUnitId:String){
     return this.http.get<MeasurementUnit>(this.url+'/find/'+measurementUnitId);
   }
+
+  public measurementUnitDelete(id: number):Observable<MeasurementUnit>{
+    return this.http.delete<MeasurementUnit>(this.url+"/"+id);
+  }
+
 }

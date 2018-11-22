@@ -18,9 +18,11 @@ export class MeasurementUnitComponent implements OnInit {
   measurementUnitId: String;
   measurementUnits: MeasurementUnit[] = new Array<MeasurementUnit>();
   measurementUnit: MeasurementUnit = new MeasurementUnit();
+  measurementUnitDelete: MeasurementUnit = new MeasurementUnit();
   
   primario:boolean=true;
   secundario:boolean=false;
+  modalDelete = false;
 
   columns = [
     { key: 'name', title: 'Nombre' },
@@ -38,6 +40,7 @@ export class MeasurementUnitComponent implements OnInit {
          this.measurementUnits = data;
        }
      ); 
+     setInterval(() => { this.getAllMeasurementsUnits(); }, 1000);
   }
 
   toggle(key: string, isChecked: boolean): void {
@@ -53,10 +56,35 @@ export class MeasurementUnitComponent implements OnInit {
     });
     }
 
+  getAllMeasurementsUnits(){
+    this.service.getAllMeasurementUnits().subscribe(
+      (data: MeasurementUnit[] ) => {
+         this.measurementUnits = data;
+       }
+     ); 
+  }
+
   edit(measurementUnit: String){
     console.log(measurementUnit+" hello");
     this.measurementUnitId= measurementUnit;
       this.primario=false;
       this.secundario=true;
+  }
+
+  showModal(measurementUnit: MeasurementUnit) {
+    this.measurementUnitDelete=measurementUnit;
+    this.modalDelete = true;
+  }
+
+  hideModal() {
+    this.measurementUnitDelete=new MeasurementUnit();
+    this.modalDelete = false;
+  }
+
+  aceptDelete(){
+    this.service.measurementUnitDelete(this.measurementUnitDelete.id).subscribe();
+    this.getAllMeasurementsUnits();
+    this.modalDelete = false;
+   
   }
 }
