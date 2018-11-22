@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Device } from '../../model/device.model';
 
 import { DeviceState } from '../../model/devicestate.model';
@@ -17,6 +17,9 @@ import { MeasurementUnit } from '../../model/measurementunit.model';
   styleUrls: ['./update-device.component.css']
 })
 export class UpdateDeviceComponent implements OnInit{
+  
+
+
   @Input() serialNumberDevice:String;
 
   device: Device = new Device();
@@ -43,6 +46,9 @@ export class UpdateDeviceComponent implements OnInit{
       );
       this.idDevice=this.serialNumberDevice;
     }
+
+    
+
 
 
   public inicializarDatos() {

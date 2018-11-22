@@ -1,5 +1,5 @@
 
-import { Component, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ViewChild, TemplateRef, OnChanges, OnInit } from '@angular/core';
 import { ConfigService } from './configurationtable.service';
 import { DeviceService } from './device.service';
 import { Device } from '../model/device.model';
@@ -11,8 +11,8 @@ import { UpdateDeviceComponent } from './update-device/update-device.component';
   styleUrls: ['./device.component.css'],
   providers: [ConfigService]
 })
-export class DeviceComponent {
-  @ViewChild('detailsTemplate') detailsTemplateRef: TemplateRef<any>;
+export class DeviceComponent implements OnInit{
+
   @ViewChild('updateDevice') childOne:UpdateDeviceComponent;
   editDevice:Device;
   serialNumber:String;
@@ -26,9 +26,10 @@ export class DeviceComponent {
     { key: 'description', title: 'Descripción' },
     { key: 'quantity', title: 'Cantidad' },
     { key: 'state', title: 'Estado' },
-    { key: 'category', title: 'Modelo' },
-    { key: 'quantity', title: 'Marca' },
-    { key: 'brand', title: 'Unid.medida' },
+    { key: 'category', title: 'Categoría' },
+    { key: 'model', title: 'Modelo' },
+    { key: 'brand', title: 'Marca' },
+    { key: 'unit', title: 'Unid.medida' },
     { key: 'edit', title: 'Editar' },
     { key: 'remove', title: 'Eliminar' }
 
@@ -39,26 +40,18 @@ export class DeviceComponent {
   deviceDelete:Device;
 
 
-  checked = {
-    'paginationEnabled': true,
-    'headerEnabled': true,
-    'searchEnabled': false,
-    'collapseAllRows': false,
-    'isLoading': false,
-    'checkboxes': false,
-    'draggable': false,
-    'fixedColumnWidth': false,
-    'logger': false,
-  };
   configuration;
   constructor(private deviceService:DeviceService) {
     this.configuration = ConfigService.config;
-    setInterval(() => { this.getAllDevices(); }, 1000);
-    //this.getAllDevices();
+    setInterval(() => { this.getAllDevices(); }, 10000);
+
 
   }
 
-  
+  ngOnInit(){
+    this.getAllDevices();
+  }
+ 
 
   public imprimir(){
     console.log(this.devices);
@@ -72,18 +65,6 @@ export class DeviceComponent {
     );
   }
   
-  onEvent(event) {
-    console.log(event);
-    this.selected = JSON.stringify(event.value.row, null, 2);
-  }
-
-  toggle(key: string, isChecked: boolean): void {
-    console.log('key: ', key, isChecked);
-    this.checked[key] = isChecked;
-    this.configuration[key] = isChecked;
-    this.configuration = { ...this.configuration };
-  }
-
   showModal(device:Device) {
     this.deviceDelete=device;
     this.modalDelete = true;
@@ -98,11 +79,11 @@ export class DeviceComponent {
     this.deviceService.deleteDevice(this.deviceDelete.serialNumber).subscribe();
     this.getAllDevices();
     this.modalDelete = false;
+    this.getAllDevices();
    
   }
 
   edit(device:Device){
-    console.log(device);
       this.serialNumber=device.serialNumber;
       this.editDevice=device;
       this.primario=false;
