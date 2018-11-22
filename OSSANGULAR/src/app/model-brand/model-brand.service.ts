@@ -29,8 +29,9 @@ export class ModelBrandService {
     return this.http.put(this.url+'/updateModelBrand',modelBrand);
   }
 
-  /*public deleteModelBrand(serialNumber:String):Observable<ModelBrand>{
-    return this.http.delete<ModelBrand>(this.URLAPI+'modelBrand/'+serialNumber);
-  }*/
+  public deleteModelBrand(id: number):Observable<ModelBrand>{
+    return this.http.delete<ModelBrand>(this.url+ '/' + id);
+
+  }
 
 }

@@ -15,9 +15,11 @@ export class ModelBrandComponent implements OnInit {
   modelBrandId: String;
   modelBrands: ModelBrand[] = new Array<ModelBrand>();
   modelBrand: ModelBrand = new ModelBrand();
+  deleteModelBrand: ModelBrand = new ModelBrand();
 
-  primario:boolean=true;
-  secundario:boolean=false;
+  primario: boolean = true;
+  secundario: boolean = false;
+  modalDelete = false;
 
   constructor(private route: Router, private service: ModelBrandService) { }
 
@@ -26,17 +28,41 @@ export class ModelBrandComponent implements OnInit {
       (data: ModelBrand[]) => {
         this.modelBrands = data;
       }
-    )
+    );
+    setInterval(() => { this.getAllModelBrand(); }, 500);
   }
-  createModelBrand():void{
+  createModelBrand(): void {
     this.service.insertModelBrand(this.modelBrand).subscribe(data => {
 
     });
   }
-  updateModelBrand(modelBrand: String){
+  updateModelBrand(modelBrand: String) {
     this.modelBrandId = modelBrand;
-    this.primario=false;;
-    this.secundario=true;
+    this.primario = false;;
+    this.secundario = true;
+  }
+  getAllModelBrand() {
+    this.service.getAllModelBrand().subscribe(
+      (data: ModelBrand[]) => {
+        this.modelBrands = data;
+      }
+    );
+  }
+  showModal(modelBrand: ModelBrand) {
+    this.deleteModelBrand = modelBrand;
+    this.modalDelete = true;
+  }
+
+  hideModal() {
+    this.deleteModelBrand = new ModelBrand;
+    this.modalDelete = false;
+  }
+
+  aceptDelete() {
+    this.service.deleteModelBrand(this.deleteModelBrand.id).subscribe();
+    this.getAllModelBrand();
+    this.modalDelete = false;
+
   }
 }
 
