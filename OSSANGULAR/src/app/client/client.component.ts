@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Client } from '../model/client.model';
 import { ClientService } from './client-service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { UpdateClientComponent } from '../client/update-client/update-client.component';
 
 
 @Component({
@@ -11,13 +12,26 @@ import {Router} from '@angular/router';
 })
 export class ClientComponent implements OnInit {
 
-  public clients: Client[] = new Array<Client>();
-  public client: Client;
+  @ViewChild('clientId') childOne: UpdateClientComponent;
+  clients: Client[] = new Array<Client>();
+  client: Client;
+  clientEdit: Client;
+  deleteClient: Client = new Client();
+  clientId: String;
+
+  primario: boolean = true;
+  secundario: boolean = false;
+  modalDelete = false;
 
   constructor(private router: Router, private clientService: ClientService) { }
 
   ngOnInit() {
-    
+    this.clientService.getAllClients().subscribe(
+      (data: Client[]) =>{
+        this.clients = data;
+      }
+    );    
+    setInterval(() => { this.getAll();}, 500);
   }
   
   getAll(){
@@ -37,20 +51,26 @@ export class ClientComponent implements OnInit {
     )
   }
 
-  update(){
-    this.clientService.updateClient(this.client).subscribe(
-      (data:Client) =>{
-        this.client = data;
-      }
-    )
+  update(clientId: String){
+    this.clientId = clientId;
+    this.primario = false;
+    this.secundario = true;
   }
 
-  delete(){
-    this.clientService.deleteClient(this.client.id).subscribe(
-      (data:Client) =>{
-        this.client = data;
-      }
-    )
+  showModal(client: Client){
+    this.deleteClient = client;
+    this.modalDelete = true;
+  }
+
+  hideModal(){
+    this.deleteClient = new Client;
+    this.modalDelete = false;
+  }
+
+  aceptDelete(){
+    this.clientService.deleteClient(this.client.id).subscribe();
+    this.getAll();
+    this.modalDelete = false;
   }
   
 }
