@@ -12,7 +12,7 @@ import { UpdateClientComponent } from '../client/update-client/update-client.com
 })
 export class ClientComponent implements OnInit {
 
-  @ViewChild('clientId') childOne: UpdateClientComponent;
+  //@ViewChild('clientId') childOne: UpdateClientComponent;
   clients: Client[] = new Array<Client>();
   client: Client;
   clientEdit: Client;
@@ -34,6 +34,16 @@ export class ClientComponent implements OnInit {
     setInterval(() => { this.getAll();}, 500);
   }
   
+/** ngOnInit() {
+    this.service.getAllModelBrand().subscribe(
+      (data: ModelBrand[]) => {
+        this.modelBrands = data;
+      }
+    );
+    setInterval(() => { this.getAllModelBrand(); }, 500);
+  } */
+
+
   getAll(){
     this.clientService.getAllClients().subscribe(
       (data: Client[])=>{
