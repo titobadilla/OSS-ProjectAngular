@@ -53,13 +53,19 @@ export class ClientComponent implements OnInit {
   }
 
 
-  insert(){
-    this.clientService.insertClient(this.client).subscribe(
-      (data:Client) =>{
-        this.client = data;
-      }
-    )
+  insert(): void {
+    this.clientService.insertClient(this.client).subscribe(data =>{
+
+    });
   }
+
+/**createMeasurementUnit(): void {
+    this.service.insertMeasurementUnit(this.measurementUnit)
+    .subscribe(data => {
+     
+    });
+    }
+ */
 
   update(clientId: String){
     this.clientId = clientId;
