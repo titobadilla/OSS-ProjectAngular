@@ -10,13 +10,13 @@
                 <div class="panel-body">
                     <h4 style="color: black; margin-left: -54%">Nombre:</h4>
                     <div class="form-group" style="width: 75%; margin-left: 15%">
-                        <input type="inventoryCategoryName" class="form-control" id="name" placeholder="Nombre" [(ngModel)]="inventoryCategory.name" name="name" >
+                        <input type="inventoryCategoryName" required class="form-control" id="name" placeholder="Nombre" [(ngModel)]="inventoryCategory.name" name="name" >
                     </div>
                     <a href="/app-insert-inventory-category" type="submit"  class="btn btn-ttc" (click)="insert()">Ingresar</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6" >
+        <div class="col-sm-7" >
             <form>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Buscar categorías">
