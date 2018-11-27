@@ -1,25 +1,23 @@
-    <div class="row">
-        <div class="col-sm-2">
-            <div class="container" style="margin-top: 75%;">
-                <div class="col-sm-4">
-                    <div class="panel panel-default text-center">
-                        <div class="panel-heading">
-                            <h3>Ingresar Unidad de Medida</h3>
-                        </div>
-                        <div class="panel-body">
-                            <h4 style="color: black; margin-left: -54%">Nombre:</h4>
-                            <div class="form-group" style="width: 75%; margin-left: 15%">
-                                <input type="text" class="form-control" id="id" placeholder="Identificación" required
-                                    [(ngModel)]="client.id">
-                                <input type="text" class="form-control" id="name" placeholder="Nombre" required
-                                    [(ngModel)]="client.name">
-                                <input type="text" class="form-control" id="name" placeholder="Nombre" required
-                                    [(ngModel)]="client.contactName">        
-                            </div>
-                            <a type="submit" class="btn btn-ttc" (click)="insert()">Ingresar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="panel panel-default text-center">
+    <div class="panel-heading">
+      <h3>Ingresar Cliente</h3>
     </div>
+    <div class="panel-body">
+      <h4 style="color: black; margin-left: -56%">Identificacion:</h4>
+      <div class="form-group" style="width: 75%; margin-left: 15%">
+        <input type="text" class="form-control" id="id" placeholder="Identificación" required [(ngModel)]="client.id"
+          name=clientId>
+      </div>
+      <h4 style="color: black; margin-left: -61%">Nombre:</h4>
+      <div class="form-group" style="width: 75%; margin-left: 15%">
+        <input type="text" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="client.name"
+          name=clientName>
+      </div>
+      <h4 style="color: black; margin-left: -49%">Nombre del contacto:</h4>
+      <div class="form-group" style="width: 75%; margin-left: 15%">
+        <input type="text" class="form-control" id="contactName" placeholder="Nombre del contacto" required [(ngModel)]="client.contactName"
+          name=clientContactName>
+      </div>
+      <a type="submit" class="btn btn-ttc" (click)="insert()">Ingresar</a>
+    </div>
+  </div>

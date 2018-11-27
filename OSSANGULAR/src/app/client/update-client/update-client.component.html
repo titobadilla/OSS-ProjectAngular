@@ -1,26 +1,24 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Operation of Security System</title>
-
-</head>
-
-<body background="/src/assets/fondo2.jpg">
- <div class="panel panel-default text-center">
-    <div class="panel-heading">
-        <h3>Editar Unidad de Medida</h3>
-    </div>
-    <div class="panel-body">
-        <h4 style="color: black; margin-left: -54%">Nombre:</h4>
-        <div class="form-group" style="width: 75%; margin-left: 15%">
-            <input type="text" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="measurementUnit.name" name=measurementUnit>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2">
+        <div class="container" style="margin-top: 75%;">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 style="margin-left: 10%">Editar Cliente</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" style="width: 75%; margin-left: 15%">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="client.name">
+                            <BR>
+                            <label>Nombre del contacto</label>
+                            <input type="text" class="form-control" id="brand"  [(ngModel)]="client.contactName">
+                        </div>
+                        <a type="submit" class="btn btn-ttc" style="margin-left: 40%" (click)="update()" href="app-model-brand">Editar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a type="submit" class="btn btn-ttc" (click)="updateMeasurementUnit()">Editar</a>
     </div>
 </div>
-
-</body>
-
-</html>
