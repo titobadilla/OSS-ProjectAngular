@@ -22,8 +22,8 @@ export class MeasurementUnitService {
     return this.http.get<MeasurementUnit[]>(Environment.apiUrl+'measurementunit/');
   }
 
-  public updateMeasurementUnit(measurementUnit:MeasurementUnit){
-    return this.http.put(this.url+'/'+measurementUnit.id+'/', measurementUnit);
+  public updateMeasurementUnit(measurementUnit:MeasurementUnit):Observable<MeasurementUnit>{
+    return this.http.put<MeasurementUnit>(this.url+'/'+measurementUnit.id+'/', measurementUnit);
   }
 
   public getByIdMeasurementUnit(measurementUnitId:String){

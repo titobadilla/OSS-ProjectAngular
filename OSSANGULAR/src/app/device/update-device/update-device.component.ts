@@ -61,9 +61,9 @@ export class UpdateDeviceComponent implements OnInit{
       this.units = data;
     });
 
-    /*this.brandService.getAllModelBrands().subscribe(data => {
+    this.brandService.getAllModelBrand().subscribe(data => {
       this.brandsModels = data;
-    });*/
+    });
 
     this.categoryService.getAllCategories().subscribe(data => {
       this.categories = data;
