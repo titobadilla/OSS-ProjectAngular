@@ -19,7 +19,23 @@ export class WorkOrderService{
       URLAPI=Environment.apiUrl;
 
       public getAllWorkOrders(): Observable<WorkOrder[]>{
-          return this.http.get<WorkOrder[]>(this.URLAPI+'');
+          return this.http.get<WorkOrder[]>(this.URLAPI+'workorder/');
       }
+
+      public getByIdWorkOrder(id: number):Observable<WorkOrder>{
+          return this.http.get<WorkOrder>(this.URLAPI+'workorder/'+id);
+      }
+
+      public insertWorkOrder(workOrder: WorkOrder):Observable<WorkOrder>{
+          return this.http.post<WorkOrder>(this.URLAPI+'workorder/addWorkOrder', workOrder);
+      }
+   
       
+      public updateWorkOrder(workOrder:WorkOrder):Observable<WorkOrder>{
+        return this.http.put<WorkOrder>(this.URLAPI+'workorder/' + workOrder.id, workOrder);
+      }
+
+      public deleteWorkOrder(id:number):Observable<WorkOrder>{
+        return this.http.delete<WorkOrder>(this.URLAPI+'workorder/'+ id);
+      }
 }

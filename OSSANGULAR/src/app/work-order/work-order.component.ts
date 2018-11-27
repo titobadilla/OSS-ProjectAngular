@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class WorkOrderComponent implements OnInit {
 
-  workOrdes: WorkOrder[];
+  workOrders: WorkOrder[];
   workOrder: WorkOrder;
   workOrderEdit: WorkOrder;
   deleteWorkOrder: WorkOrder;
@@ -26,7 +26,7 @@ export class WorkOrderComponent implements OnInit {
   ngOnInit() {
     this.service.getAllWorkOrders().subscribe(
       (data: WorkOrder[]) =>{
-        this.workOrdes = data;
+        this.workOrders = data;
       });
   }
 

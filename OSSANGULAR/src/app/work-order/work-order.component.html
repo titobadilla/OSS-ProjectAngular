@@ -13,7 +13,7 @@
                                   <tr>
                                       <th>Identificacion</th>
                                       <th>Descripción</th>
-                                      <th>Identificación del cliente</th>
+                                      <th>Nombre del cliente</th>
                                       <th>Tipo de orden</th>
                                       <th>Editar</th>
                                       <th>Eliminar</th>
@@ -23,8 +23,8 @@
                                   <tr *ngFor="let workOrder of workOrders">
                                       <td>{{workOrder.id}}</td>
                                       <td>{{workOrder.description}}</td>
-                                      <td>{{workOrder.clientId}}</td>
-                                      <td>{{workOrder.workOrderType}}</td>
+                                      <td>{{workOrder.client.name}}</td>
+                                      <td>{{workOrder.workOrderType.name}}</td>
                                       <td><a type="submit" class="btn" (click)="updateModelBrand(modelBrand.id)"><img
                                                   src="assets/editar.png" style="width: 30px;"></a></td>
                                       <td><a type="submit" class="btn" (click)="showModal(modelBrand)"><img src="assets/basura.png"

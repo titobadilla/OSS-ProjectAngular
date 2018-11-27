@@ -36,6 +36,7 @@ import { UpdateDeviceComponent } from './device/update-device/update-device.comp
 import { UpdateModelBrandComponent } from './model-brand/update-model-brand/update-model-brand.component';
 import { InsertModelBrandComponent } from './model-brand/insert-model-brand/insert-model-brand.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
+import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-work-order.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { WorkOrderComponent } from './work-order/work-order.component';
     UpdateDeviceComponent,
     UpdateModelBrandComponent,
     InsertModelBrandComponent,
-    WorkOrderComponent
+    WorkOrderComponent,
+    InsertWorkOrderComponent
   ],
   imports: [
     BrowserModule,
