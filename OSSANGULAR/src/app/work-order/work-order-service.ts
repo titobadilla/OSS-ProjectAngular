@@ -21,9 +21,12 @@ export class WorkOrderService{
       public getAllWorkOrders(): Observable<WorkOrder[]>{
           return this.http.get<WorkOrder[]>(this.URLAPI+'workorder/');
       }
+      public getAllWorkOrderswithoutEmployee(): Observable<WorkOrder[]>{
+        return this.http.get<WorkOrder[]>(this.URLAPI+'workorder/withoutEmployee/');
+    }
 
       public getByIdWorkOrder(id: number):Observable<WorkOrder>{
-          return this.http.get<WorkOrder>(this.URLAPI+'workorder/'+id);
+          return this.http.get<WorkOrder>(this.URLAPI+'workorder/find/'+id);
       }
 
       public insertWorkOrder(workOrder: WorkOrder):Observable<WorkOrder>{

@@ -21,8 +21,8 @@ export class ModelBrandService {
     return this.http.get<ModelBrand[]>(Environment.apiUrl + "modelbrand/");
   }
 
-  public getByIdModelBrand(modelBrandtId:String){
-    return this.http.get<ModelBrand>(this.url + '/' + modelBrandtId);
+  public getByIdModelBrand(modelBrandId:String){
+    return this.http.get<ModelBrand>(this.url + '/' + modelBrandId);
   }
 
   public updateModelBrand(modelBrand:ModelBrand){

@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Client } from '../../model/client.model';
-import { UpdateClientService } from '../../client/update-client/update-client-service';
-import {Router} from '@angular/router';
-import { ClientService } from '../client-service'; 
+import { Router } from '@angular/router';
+import { ClientService } from '../client-service';
 
 
 @Component({
@@ -12,25 +11,25 @@ import { ClientService } from '../client-service';
 })
 export class UpdateClientComponent implements OnInit {
 
-  // @Input() serialNumberDevice:String;
 
-  @Input() clientIdInput:String;
+  @Input() clientId: String;
 
-  public client: Client;
-  public clientId: String;
-  
+  client: Client = new Client();
+
   constructor(private router: Router, private service: ClientService) { }
 
   ngOnInit() {
-    this.service.getByIdClient(this.clientId).subscribe(data => {
-      this.client = data;
-    });
+    this.service.getByIdClient(this.clientId).subscribe(
+      data => {
+        this.client = data;
+      }
+    );
   }
 
-  
-  update(){
+
+  updateClient() {
     this.service.updateClient(this.client).subscribe(
-      (data:Client) =>{
+      (data: Client) => {
         this.client = data;
       }
     )
