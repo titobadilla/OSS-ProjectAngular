@@ -20,7 +20,7 @@ import { UpdateDeviceComponent } from './device/update-device/update-device.comp
 import { InsertClientComponent} from './client/insert-client/insert-client.component';
 import { InsertModelBrandComponent } from './model-brand/insert-model-brand/insert-model-brand.component';
 import { UpdateClientComponent } from './client/update-client/update-client.component';
-
+import { WorkOrderComponent } from './work-order/work-order.component';
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
@@ -39,7 +39,8 @@ const routes: Routes = [
     {path: "app-insert-client", component: InsertClientComponent},
     {path: "app-model-brand", component: ModelBrandComponent},
     {path: "app-insert-model-brand", component: InsertModelBrandComponent},
-    {path: "app-update-client", component: UpdateClientComponent}
+    {path: "app-update-client", component: UpdateClientComponent},
+    {path: "app-work-order", component: WorkOrderComponent}
    ];
 
 @NgModule({

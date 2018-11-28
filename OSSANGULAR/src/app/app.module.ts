@@ -34,6 +34,8 @@ import { ModelBrandService } from './model-brand/model-brand.service';
 import { UpdateDeviceComponent } from './device/update-device/update-device.component';
 import { UpdateModelBrandComponent } from './model-brand/update-model-brand/update-model-brand.component';
 import { InsertModelBrandComponent } from './model-brand/insert-model-brand/insert-model-brand.component';
+import { WorkOrderComponent } from './work-order/work-order.component';
+import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-work-order.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { InsertModelBrandComponent } from './model-brand/insert-model-brand/inse
     DeleteClientComponent,
     UpdateDeviceComponent,
     UpdateModelBrandComponent,
-    InsertModelBrandComponent
+    InsertModelBrandComponent,
+    WorkOrderComponent,
+    InsertWorkOrderComponent
   ],
   imports: [
     BrowserModule,
