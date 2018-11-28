@@ -38,7 +38,7 @@
     </div>
 </div>
 <div *ngIf="secundario">
-    <app-update-client [clientIdInput]="clientId"></app-update-client>
+    <app-update-client [clientId]="clientId"></app-update-client>
 </div>
 <div *ngIf="modalDelete" class="modal fade in" role="dialog" id="gridTools" tabindex="-1" aria-labelledby="gridModalLabel"
     style="display:block;padding-right: 20px;">
@@ -51,7 +51,7 @@
                 <h4 style="color: black; margin-left: 28%" class="modal-title" id="gridModalLabel">Eliminar Cliente</h4>
             </div>
             <div class="modal-body">
-                <h4 style="color: black; margin-left: 3%">¿Está seguro que desea eliminar al cliente:  <strong>{{client.name}}</strong> ?</h4>
+                <h4 style="color: black; margin-left: 3%">¿Está seguro que desea eliminar al cliente:  <strong>{{deleteClient.name}}</strong> ?</h4>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" (click)="hideModal()">Cancelar</button>

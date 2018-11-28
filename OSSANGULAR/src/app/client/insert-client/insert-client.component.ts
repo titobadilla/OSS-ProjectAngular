@@ -11,7 +11,7 @@ import { ClientService } from '../../client/client-service';
 })
 export class InsertClientComponent implements OnInit {
 
-  client: Client;
+  client: Client = new Client();
 
   constructor(private router: Router, private service: ClientService) { }
 
