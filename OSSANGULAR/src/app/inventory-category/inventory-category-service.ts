@@ -14,6 +14,7 @@ export class InventoryCategoryService {
   constructor(private http: HttpClient) { }
 
   public insertCategory (inventoryCategory:InventoryCategory){
+    console.log(inventoryCategory.name)
     return this.http.post(this.URLAPI+'/inventoryCategory/insert',inventoryCategory);
   }
 
@@ -22,7 +23,7 @@ export class InventoryCategoryService {
   }
 
   public updateInventoryCategory(inventoryCategory:InventoryCategory):Observable<InventoryCategory>{
-    return this.http.put<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategory.id+'/', inventoryCategory);
+    return this.http.put<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategory.id, inventoryCategory);
   }
 
   public getByIdInventoryCategory(inventoryCategoryId:String){
