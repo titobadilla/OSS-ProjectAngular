@@ -22,6 +22,9 @@ export class UpdateWorkOrderComponent implements OnInit {
   clients:Client[]=new Array();
   employees:Employee[]=new Array();
   selectedEmployees:String[]=new Array();
+  flagView:boolean=false;
+
+  bandera:boolean=false;
 
  
   constructor(private service: WorkOrderService,private serviceWorkOrderTypes:WorkOrderTypeService,
@@ -38,19 +41,22 @@ export class UpdateWorkOrderComponent implements OnInit {
         }
       );
       this.idWorkOrder=this.workOrderId;
-      //this.loadDropDownMultiple();
     }
 
     private loadDropDownMultiple(){
+     
       let i=0;
      this.selectedEmployees=[];
       for(i=0;i<this.workOrder.employees.length;i++){
         this.selectedEmployees.push(this.workOrder.employees[i].id);
       }
+    
     }
-    private imprimir(){
+
+    private viewEmployees(){
       
       this.loadDropDownMultiple();
+      this.flagView=true;
      
   
     }
@@ -70,8 +76,16 @@ export class UpdateWorkOrderComponent implements OnInit {
 
     
   public editWorkOrder(){
-    //arreglar meter empleados de nuevo
-    this.service.updateWorkOrder(this.workOrder).subscribe();
+    this.workOrder.employees=new Array();
+    let i=0;
+    for(i=0;i<this.selectedEmployees.length;i++){
+      let employee:Employee = new Employee();
+      employee.id=this.selectedEmployees[i];
+      this.workOrder.employees.push(employee);
+    }
+   this.service.updateWorkOrder(this.workOrder).subscribe();
+   
+    
   }
 
     

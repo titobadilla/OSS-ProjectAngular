@@ -35,9 +35,10 @@
                             </ng-select>
                         </div>
 
-                    
-                        
                         <div class="form-group"  style="width: 90%; margin-left: 15%">
+                        <button *ngIf='!flagView' class="btn btn-default" (click)="viewEmployees()">Mostrar técnicos asociados</button>
+                      </div>
+                        <div *ngIf='flagView' class="form-group"  style="width: 90%; margin-left: 15%">
                           <label>Seleccione los técnicos asociados</label>
                         <ng-select [items]="employees"
                             bindLabel='name'
@@ -49,14 +50,11 @@
                       </div>
                         
 
-                    </div>
-                                                             
-
-                      
+                    </div>                                
+                     
                   </div>
                 <div class="container-fluid">
-                   <a type="button" class="btn btn-ttc btn-block" (click)="editWorkOrder()">Editar</a>
-                   <a type="button" class="btn btn-ttc btn-block" (click)="imprimir()">Imprimir</a>
+                   <a type="button" href="/app-work-order" class="btn btn-ttc btn-block" (click)="editWorkOrder()">Editar</a>
                 </div>
                 <br>
                  
