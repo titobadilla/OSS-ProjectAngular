@@ -12,7 +12,7 @@ import { UpdateClientComponent } from '../client/update-client/update-client.com
 })
 export class ClientComponent implements OnInit {
 
-  //@ViewChild('clientId') childOne: UpdateClientComponent;
+  @ViewChild('clientId') childOne: UpdateClientComponent;
   clients: Client[] = new Array<Client>();
   client: Client;
   clientEdit: Client;
@@ -67,8 +67,8 @@ export class ClientComponent implements OnInit {
     }
  */
 
-  update(clientId: String){
-    this.clientId = clientId;
+  update(client: String){
+    this.clientId = client;
     this.primario = false;
     this.secundario = true;
   }
@@ -84,7 +84,7 @@ export class ClientComponent implements OnInit {
   }
 
   aceptDelete(){
-    this.clientService.deleteClient(this.client.id).subscribe();
+    this.clientService.deleteClient(this.deleteClient.id).subscribe();
     this.getAll();
     this.modalDelete = false;
   }

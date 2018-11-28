@@ -21,7 +21,6 @@ import { InsertMeasurementUnitComponent } from './measurement-unit/insert-measur
 import { InsertDeviceComponent } from './device/insert-device/insert-device.component';
 import { UpdateMeasurementUnitComponent } from './measurement-unit/update-measurement-unit/update-measurement-unit.component';
 import { InsertInventoryCategoryComponent } from './inventory-category/insert-inventory-category/insert-inventory-category.component';
-import { SearchInventoryCategoryComponent } from './inventory-category/search-inventory-category/search-inventory-category.component';
 import { UpdateInventoryCategoryComponent } from './inventory-category/update-inventory-category/update-inventory-category.component';
 import { InsertClientComponent } from './client/insert-client/insert-client.component';
 import { UpdateClientComponent } from './client/update-client/update-client.component';
@@ -58,7 +57,6 @@ import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-
     InsertDeviceComponent,
     UpdateMeasurementUnitComponent,
     InsertInventoryCategoryComponent,
-    SearchInventoryCategoryComponent,
     UpdateInventoryCategoryComponent,
     InsertClientComponent,
     UpdateClientComponent,

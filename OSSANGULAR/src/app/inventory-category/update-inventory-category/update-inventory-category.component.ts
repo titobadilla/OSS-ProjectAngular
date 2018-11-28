@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Router} from '@angular/router';
+import { InventoryCategoryService } from '../inventory-category-service'
+import { InventoryCategory} from '../../model/inventorycategory.model'
 
 @Component({
   selector: 'app-update-inventory-category',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateInventoryCategoryComponent implements OnInit {
 
-  constructor() { }
+  @Input() inventoryCategoryId:String;
+
+  inventoryCategory: InventoryCategory = new InventoryCategory();
+  nameInventoryCategory: String;
+
+  constructor(private router: Router, private service: InventoryCategoryService) { }
 
   ngOnInit() {
+    this.service.getByIdInventoryCategory(this.inventoryCategoryId).subscribe(
+      data=>{
+        this. inventoryCategory=data;
+        this.nameInventoryCategory=data.name;
+      });
+  }
+
+  updateInventoryCategory(){
+    this.service.updateInventoryCategory(this.inventoryCategory).subscribe(
+      (data:InventoryCategory) =>{
+        this.inventoryCategory = data;
+      }
+    )
   }
 
 }

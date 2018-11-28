@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Environment } from '../app.environment';
 import { Client } from '../model/client.model';
 import { Observable } from 'rxjs';
@@ -10,19 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class ClientService {
 
-  httpOptions = {
-    headers : new HttpHeaders({'Content-Type': 'application/json'})
-  };
-
   constructor(private http: HttpClient) { }
 
-  URLAPI=Environment.apiUrl;
+  private requestMapping = 'client/';
+  private url = Environment.apiUrl + this.requestMapping;
 
-  //private requestMaping = 'client/';
-  //private url = Environment.apiUrl + this.requestMaping;
-  
-  public  getAllClients(): Observable<Client[]>{
-    return this.http.get<Client[]>(this.URLAPI+'client/');      
+  public getAllClients(): Observable<Client[]> {
+    return this.http.get<Client[]>(Environment.apiUrl + 'client/');
   }
 
   /**
@@ -30,23 +24,23 @@ export class ClientService {
       return this.http.post(this.url + '/insertModelBrand/', modelBrand);
       }
    */
-  public insertClient(client:Client){
-    return this.http.post(this.URLAPI+'client/insert/', client);
-  }
-  
-  public updateClient(client:Client){
-    return this.http.put(this.URLAPI+'client/updateClient', client);
-  }
-  
-  public deleteClient(id:string){
-    return this.http.delete(this.URLAPI+'/client' + id);
+  public insertClient(client: Client) {
+    return this.http.post(this.url + '/insert/', client);
   }
 
-  public getByIdClient(clientId: String){
-    return this.http.get<Client>(this.URLAPI+'/getById/'+ clientId);
+  public updateClient(client: Client) {
+    return this.http.put(this.url + '/updateClient', client);
+  }
+
+  public deleteClient(id: string) {
+    return this.http.delete(this.url + '/' + id);
+  }
+
+  public getByIdClient(clientId: String) {
+    return this.http.get<Client>(this.url + '/' + clientId);
   }
   /* public getByIdModelBrand(modelBrandtId:String){
     return this.http.get<ModelBrand>(this.url + '/' + modelBrandtId);
   } */
-  
+
 }
