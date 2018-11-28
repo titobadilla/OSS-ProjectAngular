@@ -37,6 +37,9 @@ import { UpdateModelBrandComponent } from './model-brand/update-model-brand/upda
 import { InsertModelBrandComponent } from './model-brand/insert-model-brand/insert-model-brand.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-work-order.component';
+import { WorkOrderTypeComponent } from './work-order-type/work-order-type.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-work-order.component';
 
 
 @NgModule({
@@ -64,7 +67,10 @@ import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-
     UpdateModelBrandComponent,
     InsertModelBrandComponent,
     WorkOrderComponent,
-    InsertWorkOrderComponent
+    InsertWorkOrderComponent,
+    WorkOrderTypeComponent,
+    EmployeeComponent,
+    UpdateWorkOrderComponent
   ],
   imports: [
     BrowserModule,

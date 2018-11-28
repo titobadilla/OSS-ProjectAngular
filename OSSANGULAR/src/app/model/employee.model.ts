@@ -9,4 +9,6 @@ export class Employee {
     role: Role = new Role();
     username:String;
     password:String;
+
+    
 }

@@ -20,14 +20,47 @@ export class WorkOrderComponent implements OnInit {
   primario: boolean = true;
   secundario: boolean = false;
   modalDelete = false;
+  
 
-  constructor(private router: Router, private service: WorkOrderService) { }
+  constructor(private serviceWorkOrder: WorkOrderService) { 
+    this.getAllWorkOrders();
+  }
 
   ngOnInit() {
-    this.service.getAllWorkOrders().subscribe(
+
+  }
+
+  public getAllWorkOrders(){
+    this.serviceWorkOrder.getAllWorkOrderswithoutEmployee().subscribe(
       (data: WorkOrder[]) =>{
         this.workOrders = data;
       });
   }
+
+  
+  showModal(workOrder:WorkOrder) {
+    this.deleteWorkOrder=workOrder;
+    this.modalDelete = true;
+  }
+
+  hideModal() {
+    this.deleteWorkOrder=new WorkOrder();
+    this.modalDelete = false;
+  }
+
+  aceptDelete(){
+    this.serviceWorkOrder.deleteWorkOrder(this.deleteWorkOrder.id).subscribe();
+    this.getAllWorkOrders
+    this.modalDelete = false;
+    this.getAllWorkOrders();
+  }
+
+  edit(workOrder:WorkOrder){
+    this.workOrderId=workOrder.id;
+    this.workOrderEdit=workOrder;
+    this.primario=false;
+    this.secundario=true;
+
+}
 
 }
