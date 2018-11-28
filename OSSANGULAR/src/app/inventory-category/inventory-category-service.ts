@@ -21,4 +21,16 @@ export class InventoryCategoryService {
     return this.http.get<InventoryCategory[]>(this.URLAPI+'inventoryCategory/');
   }
 
+  public updateInventoryCategory(inventoryCategory:InventoryCategory):Observable<InventoryCategory>{
+    return this.http.put<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategory.id+'/', inventoryCategory);
+  }
+
+  public getByIdInventoryCategory(inventoryCategoryId:String){
+    return this.http.get<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategoryId);
+  }
+
+  public inventoryCategoryDelete(id: number):Observable<InventoryCategory>{
+    return this.http.delete<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+id);
+  }
+
 }

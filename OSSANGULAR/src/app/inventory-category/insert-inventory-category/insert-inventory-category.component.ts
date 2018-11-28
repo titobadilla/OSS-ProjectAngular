@@ -12,15 +12,11 @@ import { InventoryCategoryService} from '../inventory-category-service';
 export class InsertInventoryCategoryComponent implements OnInit {
 
   inventoryCategory: InventoryCategory = new InventoryCategory();
-  inventoryCategories: InventoryCategory[]= new Array<InventoryCategory>();
 
   constructor(private router: Router, private service: InventoryCategoryService) { }
 
   ngOnInit() {
-    this.service.getAllCategories().subscribe(
-      (data: InventoryCategory[])=>{
-        this.inventoryCategories = data;
-      })
+ 
   }
 
   insert(){

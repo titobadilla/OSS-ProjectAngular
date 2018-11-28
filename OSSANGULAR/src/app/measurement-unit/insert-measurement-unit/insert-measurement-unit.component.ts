@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { MeasurementUnitService } from '../measurement-unit.service';
 import { MeasurementUnit } from '../../model/measurementunit.model';
 
@@ -21,10 +21,10 @@ export class InsertMeasurementUnitComponent implements OnInit {
 
   createMeasurementUnit(): void {
     this.service.insertMeasurementUnit(this.measurementUnit)
-    .subscribe(data => {
-     
-    });
-    }
+      .subscribe(data => {
+
+      });
+  }
 
 
 
