@@ -15,7 +15,7 @@ export class InventoryCategoryComponent implements OnInit {
 
   @ViewChild('inventoryCategoryId') childOne:UpdateInventoryCategoryComponent;
 
-  inventoryCategoryEdit: InventoryCategory;
+  inventoryCategoryEdit: InventoryCategory= new InventoryCategory();
   inventoryCategoryId: String;
   inventoryCategories: InventoryCategory[] = new Array<InventoryCategory>();
   inventoryCategory: InventoryCategory = new InventoryCategory();
@@ -52,9 +52,7 @@ export class InventoryCategoryComponent implements OnInit {
 
   createInventoryCategory(): void {
     this.service.insertCategory(this.inventoryCategory)
-    .subscribe(data => {
-     
-    });
+    .subscribe();
     }
 
   getAllCategories(){

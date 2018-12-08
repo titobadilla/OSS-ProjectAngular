@@ -1,7 +1,7 @@
 <div *ngIf="primario">
     <div class="row">
         <div class="col-sm-2">
-            <div class="container" style="margin-top: 75%;">
+            <div class="container">
                 <div class="col-sm-4">
                     <app-insert-inventory-category></app-insert-inventory-category>>
                 </div>
@@ -11,7 +11,7 @@
                             <h3>Categorías</h3>
                         </div>
                         <div class="panel-body">
-                            <ngx-table [configuration]="configuration" [detailsTemplate]="detailsTemplateRef" [data]="inventoryCategory" [columns]="columns">
+                            <ngx-table [configuration]="configuration" [detailsTemplate]="detailsTemplateRef" [data]="inventoryCategories" [columns]="columns">
                                 <ng-template let-row>
                                     <td>
                                         <span class="font-small">{{row.name}}</span>

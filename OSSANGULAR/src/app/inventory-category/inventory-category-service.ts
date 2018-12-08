@@ -15,7 +15,7 @@ export class InventoryCategoryService {
 
   public insertCategory (inventoryCategory:InventoryCategory){
     console.log(inventoryCategory.name)
-    return this.http.post(this.URLAPI+'/inventoryCategory/insert',inventoryCategory);
+    return this.http.post(this.URLAPI+'inventoryCategory/insert',inventoryCategory);
   }
 
   public getAllCategories():Observable<InventoryCategory[]>{
@@ -23,15 +23,15 @@ export class InventoryCategoryService {
   }
 
   public updateInventoryCategory(inventoryCategory:InventoryCategory):Observable<InventoryCategory>{
-    return this.http.put<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategory.id, inventoryCategory);
+    return this.http.put<InventoryCategory>(this.URLAPI+'inventoryCategory/'+inventoryCategory.id, inventoryCategory);
   }
 
   public getByIdInventoryCategory(inventoryCategoryId:String){
-    return this.http.get<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+inventoryCategoryId);
+    return this.http.get<InventoryCategory>(this.URLAPI+'inventoryCategory/find/'+inventoryCategoryId);
   }
 
   public inventoryCategoryDelete(id: number):Observable<InventoryCategory>{
-    return this.http.delete<InventoryCategory>(this.URLAPI+'/inventoryCategory/'+id);
+    return this.http.delete<InventoryCategory>(this.URLAPI+'inventoryCategory/'+id);
   }
 
 }

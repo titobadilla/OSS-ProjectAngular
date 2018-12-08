@@ -21,11 +21,6 @@ export class InsertInventoryCategoryComponent implements OnInit {
 
   insert(){
     this.service.insertCategory(this.inventoryCategory).subscribe(
-      
-      (data:InventoryCategory) =>{
-        this.inventoryCategory = data;
-     
-      }
     )
   }
 

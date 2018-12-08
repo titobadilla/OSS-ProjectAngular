@@ -5,7 +5,7 @@
     <div class="panel-body">
         <h4 style="color: black; margin-left: -54%">Nombre:</h4>
         <div class="form-group" style="width: 75%; margin-left: 15%">
-            <input type="text" required class="form-control" id="name" placeholder="Nombre" [(ngModel)]="inventoryCategory" >
+            <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="inventoryCategory.name" >
         </div>
         <a  type="submit" class="btn btn-ttc" (click)="insert()">Ingresar</a>
     </div>

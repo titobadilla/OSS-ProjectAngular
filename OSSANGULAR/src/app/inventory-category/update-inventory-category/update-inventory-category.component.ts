@@ -18,11 +18,13 @@ export class UpdateInventoryCategoryComponent implements OnInit {
   constructor(private router: Router, private service: InventoryCategoryService) { }
 
   ngOnInit() {
+    alert(this.inventoryCategoryId)
     this.service.getByIdInventoryCategory(this.inventoryCategoryId).subscribe(
       data=>{
         this. inventoryCategory=data;
-        this.nameInventoryCategory=data.name;
+        this.nameInventoryCategory=this.inventoryCategory.name;
       });
+      
   }
 
   updateInventoryCategory(){
