@@ -22,6 +22,7 @@ export class InsertWorkOrderComponent implements OnInit {
   employees: Employee[] = new Array();
   selectedEmployees: String[];
   public sucess = false;
+  validar =false;
 
 
   constructor(private service: WorkOrderService, private serviceWorkOrderTypes: WorkOrderTypeService,
@@ -47,7 +48,7 @@ export class InsertWorkOrderComponent implements OnInit {
   public createWorkOrder(form: NgForm) {
     if (form.valid) {
       let i = 0;
-
+      this.validar = form.valid
       for (i = 0; i < this.selectedEmployees.length; i++) {
         let employee: Employee = new Employee();
         employee.id = this.selectedEmployees[i];
