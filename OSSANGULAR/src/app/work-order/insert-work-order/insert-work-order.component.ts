@@ -45,16 +45,23 @@ export class InsertWorkOrderComponent implements OnInit {
   }
 
   public createWorkOrder(form: NgForm) {
-    let i = 0;
+    if (form.valid) {
+      let i = 0;
 
-    for (i = 0; i < this.selectedEmployees.length; i++) {
-      let employee: Employee = new Employee();
-      employee.id = this.selectedEmployees[i];
-      this.workOrder.employees.push(employee);
+      for (i = 0; i < this.selectedEmployees.length; i++) {
+        let employee: Employee = new Employee();
+        employee.id = this.selectedEmployees[i];
+        this.workOrder.employees.push(employee);
+      }
+      this.service.insertWorkOrder(this.workOrder).subscribe();
+      this.workOrder = new WorkOrder();
+      this.selectedEmployees = [];
+      form.reset();
+      this.sucess = true;
+      setInterval(() => {
+        this.sucess = false;
+      }, 4000);
     }
-    this.service.insertWorkOrder(this.workOrder).subscribe();
-    this.workOrder = new WorkOrder();
-    this.selectedEmployees = [];
 
   }
 
