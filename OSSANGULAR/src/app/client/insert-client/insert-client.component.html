@@ -1,23 +1,41 @@
 <div class="panel panel-default text-center">
-    <div class="panel-heading">
-      <h3>Ingresar Cliente</h3>
+  <div class="panel-heading">
+    <h3>Ingresar Cliente</h3>
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-success" *ngIf="sucess">
+      <div>Ingresado con exito</div>
     </div>
-    <div class="panel-body">
+    <form #formInsertClient="ngForm" (ngSubmit)="insert(formInsertClient)">
       <h4 style="color: black; margin-left: -56%">Identificacion:</h4>
       <div class="form-group" style="width: 75%; margin-left: 15%">
-        <input type="text" class="form-control" id="id" placeholder="Identificación" required [(ngModel)]="client.id"
-          name=clientId>
+        <input type="text" class="form-control" #clientId="ngModel" placeholder="Identificación" required [(ngModel)]="client.id"
+          name=clientId required minlength="9" maxlength="9" pattern="[0-9]{1,9}">
+      </div>
+      <div class="alert alert-warning" *ngIf="clientId.touched && !clientId.valid">
+        <div *ngIf="clientId.errors.required">Es necesario un numero de Identificacion.</div>
+        <div *ngIf="clientId.errors.minlength">La Identificación no puede ser menor a 9 caracteres</div>
+        <div *ngIf="clientId.errors.pattern">Solo se pueden ingresar numeros</div>
       </div>
       <h4 style="color: black; margin-left: -61%">Nombre:</h4>
       <div class="form-group" style="width: 75%; margin-left: 15%">
-        <input type="text" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="client.name"
-          name=clientName>
+        <input type="text" class="form-control" #clientName="ngModel" placeholder="Nombre" required [(ngModel)]="client.name"
+          name=clientName required pattern="[A-Za-z ]+">
+      </div>
+      <div class="alert alert-warning" *ngIf="clientName.touched && !clientName.valid">
+        <div *ngIf="clientName.errors.required">El campo de nombre es obligatorio</div>
+        <div *ngIf="clientName.errors.pattern">Solo se pueden ingresar letras</div>
       </div>
       <h4 style="color: black; margin-left: -49%">Nombre del contacto:</h4>
       <div class="form-group" style="width: 75%; margin-left: 15%">
-        <input type="text" class="form-control" id="contactName" placeholder="Nombre del contacto" required [(ngModel)]="client.contactName"
-          name=clientContactName>
+        <input type="text" class="form-control" #clientContactName="ngModel" placeholder="Nombre del contacto" required
+          [(ngModel)]="client.contactName" name=clientContactName required pattern="[A-Za-z ]+">
       </div>
-      <a type="submit" class="btn" (click)="insert()">Ingresar</a>
-    </div>
+      <div class="alert alert-warning" *ngIf="clientContactName.touched && !clientContactName.valid">
+        <div *ngIf="clientContactName.errors.required">El campo de nombre es obligatorio</div>
+        <div *ngIf="clientContactName.errors.pattern">Solo se pueden ingresar letras</div>
+      </div>
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
   </div>
+</div>
