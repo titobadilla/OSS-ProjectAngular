@@ -15,6 +15,11 @@
                           <input type="text" class="form-control" name="descripcion"  placeholder="Descripción" required [(ngModel)]="workOrder.description" >
                       </div>
 
+                      <div class="form-group" style="width: 90%; margin-left: 15%">
+                        <label style="align-content: center" for="descripcion">Fecha</label>
+                      <input type="date" class="form-control" name="date"  placeholder="Date" required [(ngModel)]="workOrder.date" >
+                  </div>
+
                       <div class="form-group"  style="width: 90%; margin-left: 15%">
                         <label >Elija un tipo de orden de trabajo</label>
                           <ng-select [items]="workOrdersType"

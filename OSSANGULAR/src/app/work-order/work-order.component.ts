@@ -60,7 +60,7 @@ export class WorkOrderComponent implements OnInit {
     this.workOrderEdit=workOrder;
     this.primario=false;
     this.secundario=true;
-
+    
 }
 
 }
