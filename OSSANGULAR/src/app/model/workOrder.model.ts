@@ -8,4 +8,5 @@ export class WorkOrder{
     client:Client=new Client();
     workOrderType:WorkOrderType=new WorkOrderType();
     employees: Employee[] = new Array();
+    date: String;
 }
