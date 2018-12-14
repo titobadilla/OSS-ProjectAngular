@@ -39,11 +39,16 @@ import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-
 import { WorkOrderTypeComponent } from './work-order-type/work-order-type.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-work-order.component';
+<<<<<<< HEAD
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AuthService } from './authentication/auth.service';
 import { AuthGuard } from './authentication/guards/auth.guard';
 import { JwtHelper } from './authentication/helper/jwt-helper';
 import { TokenStorage } from './authentication/helper/token-storage';
+=======
+import { ReportWorkOrderComponent } from './report-work-order/report-work-order.component';
+import { ReportService } from './report-work-order/report.service';
+>>>>>>> a9914cf5d9a7d7b857c98d4594977e1e868dce3b
 
 
 @NgModule({
@@ -74,7 +79,11 @@ import { TokenStorage } from './authentication/helper/token-storage';
     WorkOrderTypeComponent,
     EmployeeComponent,
     UpdateWorkOrderComponent,
+<<<<<<< HEAD
     AuthenticationComponent
+=======
+    ReportWorkOrderComponent
+>>>>>>> a9914cf5d9a7d7b857c98d4594977e1e868dce3b
   ],
   imports: [
     BrowserModule,
@@ -86,7 +95,11 @@ import { TokenStorage } from './authentication/helper/token-storage';
     TrendModule
   ],
   providers: [ClientService,DeviceService,DeviceStateService,
+<<<<<<< HEAD
   InventoryCategoryService,MeasurementUnitService,ModelBrandService,AuthService,AuthGuard,JwtHelper,TokenStorage],
+=======
+  InventoryCategoryService,MeasurementUnitService,ModelBrandService,ReportService],
+>>>>>>> a9914cf5d9a7d7b857c98d4594977e1e868dce3b
   bootstrap: [AppComponent]
 })
 export class AppModule { }
