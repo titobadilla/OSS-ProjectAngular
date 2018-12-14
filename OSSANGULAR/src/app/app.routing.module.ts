@@ -22,6 +22,8 @@ import { InsertModelBrandComponent } from './model-brand/insert-model-brand/inse
 import { UpdateClientComponent } from './client/update-client/update-client.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-work-order.component';
+import { ReportWorkOrderComponent } from './report-work-order/report-work-order.component';
+
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
@@ -42,7 +44,9 @@ const routes: Routes = [
     {path: "app-insert-model-brand", component: InsertModelBrandComponent},
     {path: "app-update-client", component: UpdateClientComponent},
     {path: "app-work-order", component: WorkOrderComponent},
-    {path: "app-insert-work-order", component: InsertWorkOrderComponent}
+    {path: "app-insert-work-order", component: InsertWorkOrderComponent},
+    {path: "app-report-work-order",component: ReportWorkOrderComponent}
+    
    ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+<div class="panel panel-default text-center" id="content">
+  <div class="panel-heading">
+    <h1>Reporte de ordenes de trabajo de clientes en una fecha</h1>
+  </div>
+  <div class="panel-body">
+    <div class=" col-xs-4">
+
+
+      <div class="row">
+        <div class="col-sm-5">
+          <label>Fecha</label>
+          <input type="date" class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="date">
+        </div>
+        <div class="col-sm-5">
+          <label>Nombre del cliente</label>
+          <input type="text" class="form-control" required [(ngModel)]="nameClient">
+        </div>
+      </div>
+      <button class="btn btn-ttc" (click)="getReport()">Buscar</button>
+      <button class="btn btn-ttc" (click)="getAll()">Ver Todos</button>
+
+
+    </div>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <th>Nombre del Cliente</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+      </tr>
+      <tr *ngFor="let report of reports">
+        <td>{{report.nameClient}}</td>
+        <td>{{report.date}}</td>
+        <td>{{report.description}}</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+</div>

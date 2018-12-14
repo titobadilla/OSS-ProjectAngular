@@ -39,6 +39,8 @@ import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-
 import { WorkOrderTypeComponent } from './work-order-type/work-order-type.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-work-order.component';
+import { ReportWorkOrderComponent } from './report-work-order/report-work-order.component';
+import { ReportService } from './report-work-order/report.service';
 
 
 @NgModule({
@@ -68,7 +70,8 @@ import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-
     InsertWorkOrderComponent,
     WorkOrderTypeComponent,
     EmployeeComponent,
-    UpdateWorkOrderComponent
+    UpdateWorkOrderComponent,
+    ReportWorkOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,7 @@ import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-
     TrendModule
   ],
   providers: [ClientService,DeviceService,DeviceStateService,
-  InventoryCategoryService,MeasurementUnitService,ModelBrandService],
+  InventoryCategoryService,MeasurementUnitService,ModelBrandService,ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
