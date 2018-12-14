@@ -39,6 +39,11 @@ import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-
 import { WorkOrderTypeComponent } from './work-order-type/work-order-type.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-work-order.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { AuthService } from './authentication/auth.service';
+import { AuthGuard } from './authentication/guards/auth.guard';
+import { JwtHelper } from './authentication/helper/jwt-helper';
+import { TokenStorage } from './authentication/helper/token-storage';
 
 
 @NgModule({
@@ -68,7 +73,8 @@ import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-
     InsertWorkOrderComponent,
     WorkOrderTypeComponent,
     EmployeeComponent,
-    UpdateWorkOrderComponent
+    UpdateWorkOrderComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +86,7 @@ import { UpdateWorkOrderComponent } from './work-order/update-work-order/update-
     TrendModule
   ],
   providers: [ClientService,DeviceService,DeviceStateService,
-  InventoryCategoryService,MeasurementUnitService,ModelBrandService],
+  InventoryCategoryService,MeasurementUnitService,ModelBrandService,AuthService,AuthGuard,JwtHelper,TokenStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

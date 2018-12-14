@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Environment} from '../app.environment';
-import { HttpClient } from '../../../node_modules/@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InventoryCategory } from '../model/inventorycategory.model';
 import { Observable } from 'rxjs';
+import { TokenStorage } from '../authentication/helper/token-storage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,28 +11,48 @@ import { Observable } from 'rxjs';
 export class InventoryCategoryService {
   
   URLAPI=Environment.apiUrl;
+  reqHeader:any;
+  tokenCrypt:any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private token:TokenStorage) { }
+
+  private getTokenHeader(){
+    this.tokenCrypt=this.token.getToken();
+    if(this.tokenCrypt!=null){
+      this.reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.tokenCrypt
+     });
+    }
+    else{
+      this.reqHeader=null;      
+    }
+  }
 
   public insertCategory (inventoryCategory:InventoryCategory){
     console.log(inventoryCategory.name)
-    return this.http.post(this.URLAPI+'inventoryCategory/insert',inventoryCategory);
+    this.getTokenHeader();
+    return this.http.post(this.URLAPI+'inventoryCategory/insert',inventoryCategory, { headers: this.reqHeader });
   }
 
   public getAllCategories():Observable<InventoryCategory[]>{
-    return this.http.get<InventoryCategory[]>(this.URLAPI+'inventoryCategory/');
+    this.getTokenHeader();
+    return this.http.get<InventoryCategory[]>(this.URLAPI+'inventoryCategory/', { headers: this.reqHeader });
   }
 
   public updateInventoryCategory(inventoryCategory:InventoryCategory):Observable<InventoryCategory>{
-    return this.http.put<InventoryCategory>(this.URLAPI+'inventoryCategory/'+inventoryCategory.id, inventoryCategory);
+    this.getTokenHeader();
+    return this.http.put<InventoryCategory>(this.URLAPI+'inventoryCategory/'+inventoryCategory.id, inventoryCategory, { headers: this.reqHeader });
   }
 
   public getByIdInventoryCategory(inventoryCategoryId:String){
-    return this.http.get<InventoryCategory>(this.URLAPI+'inventoryCategory/find/'+inventoryCategoryId);
+    this.getTokenHeader();
+    return this.http.get<InventoryCategory>(this.URLAPI+'inventoryCategory/find/'+inventoryCategoryId, { headers: this.reqHeader });
   }
 
   public inventoryCategoryDelete(id: number):Observable<InventoryCategory>{
-    return this.http.delete<InventoryCategory>(this.URLAPI+'inventoryCategory/'+id);
+    this.getTokenHeader();
+    return this.http.delete<InventoryCategory>(this.URLAPI+'inventoryCategory/'+id, { headers: this.reqHeader });
   }
 
 }

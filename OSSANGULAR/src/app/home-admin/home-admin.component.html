@@ -4,19 +4,19 @@
                   <a class="navbar-brand " style="color: #1692B8 !important;" href="#">Operation of Security System</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                  <li>
-                        <a style="color: #1692B8 !important;" href="#">
-                              <span  class="glyphicon glyphicon-user"></span> Sign Up</a>
+                  <li *ngIf="flagSignOut" >
+                        <a style="color: #1692B8 !important;" (click)='signOut()'>
+                              <span  class="glyphicon glyphicon-user"></span> Cerrar Sesión</a>
                   </li>
-                  <li>
-                        <a style="color: #1692B8 !important;" href="#">
-                              <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                  <li *ngIf="flagSignIn" >
+                        <a style="color: #1692B8 !important;"  [routerLink]='["/app-authentication"]'>
+                              <span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a>
                   </li>
             </ul>
       </div>
 </nav>
 <div class="col-sm-3" style="margin-left: 20px" >
-      <app-menu></app-menu>
+      <app-menu [flagView]='flagSignOut'></app-menu>
 </div>
 <div class="col-sm-8">
       <router-outlet></router-outlet>

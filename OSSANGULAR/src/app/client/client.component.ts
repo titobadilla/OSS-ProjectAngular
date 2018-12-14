@@ -31,7 +31,7 @@ export class ClientComponent implements OnInit {
         this.clients = data;
       }
     );    
-    setInterval(() => { this.getAll();}, 500);
+    setInterval(() => { this.getAll();}, 10000);
   }
   
 /** ngOnInit() {

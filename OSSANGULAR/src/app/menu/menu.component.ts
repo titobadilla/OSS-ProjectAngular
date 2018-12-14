@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import * as abc from '../menu/menu.js';
 
 @Component({
@@ -7,6 +7,8 @@ import * as abc from '../menu/menu.js';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+  @Input() flagView:boolean=false;
 
   constructor() { }
 

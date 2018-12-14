@@ -20,6 +20,7 @@ export class InsertClientComponent implements OnInit {
 
   insert(): void {
     this.service.insertClient(this.client).subscribe(data =>{
+      //alert(data.toString);
       
     })
   }

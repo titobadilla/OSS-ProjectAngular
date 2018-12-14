@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Environment } from '../app.environment';
 import { ModelBrand } from '../model/modelbrand.model';
 import { Observable } from 'rxjs';
+import { TokenStorage } from '../authentication/helper/token-storage';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,27 +11,47 @@ export class ModelBrandService {
 
   private requestMapping = "modelbrand";
   private url = Environment.apiUrl + this.requestMapping;
+  reqHeader:any;
+  tokenCrypt:any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private token:TokenStorage) { }
+
+  private getTokenHeader(){
+    this.tokenCrypt=this.token.getToken();
+    if(this.tokenCrypt!=null){
+      this.reqHeader = new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.tokenCrypt
+     });
+    }
+    else{
+      this.reqHeader=null;      
+    }
+  }
 
   public insertModelBrand(modelBrand: ModelBrand) {
-    return this.http.post(this.url + '/insertModelBrand/', modelBrand);
+    this.getTokenHeader();
+    return this.http.post(this.url + '/insertModelBrand/', modelBrand, { headers: this.reqHeader });
   }
 
   public getAllModelBrand(): Observable<ModelBrand[]> {
-    return this.http.get<ModelBrand[]>(Environment.apiUrl + "modelbrand/");
+    this.getTokenHeader();
+    return this.http.get<ModelBrand[]>(Environment.apiUrl + "modelbrand/", { headers: this.reqHeader });
   }
 
   public getByIdModelBrand(modelBrandId:String){
-    return this.http.get<ModelBrand>(this.url + '/' + modelBrandId);
+    this.getTokenHeader();
+    return this.http.get<ModelBrand>(this.url + '/' + modelBrandId, { headers: this.reqHeader });
   }
 
   public updateModelBrand(modelBrand:ModelBrand){
-    return this.http.put(this.url+'/updateModelBrand',modelBrand);
+    this.getTokenHeader();
+    return this.http.put(this.url+'/updateModelBrand',modelBrand, { headers: this.reqHeader });
   }
 
   public deleteModelBrand(id: number):Observable<ModelBrand>{
-    return this.http.delete<ModelBrand>(this.url+ '/' + id);
+    this.getTokenHeader();
+    return this.http.delete<ModelBrand>(this.url+ '/' + id, { headers: this.reqHeader });
 
   }
 

@@ -1,4 +1,4 @@
-<div class="container" id="menu">
+<div *ngIf="flagView" class="container" id="menu">
       <ul id="accordion" class="accordion">
             <li>
                   <div class="link"></div>
@@ -33,10 +33,10 @@
                   </div>
                   <ul class="submenu">
                         <li>
-                              <a href="/app-insert-client">Ingresar un nuevo cliente</a>
+                              <a [routerLink]='["/app-insert-client"]'>Ingresar un nuevo cliente</a>
                         </li>
                         <li>
-                              <a href="/app-client">Buscar un cliente</a>
+                              <a [routerLink]='["/app-client"]'>Buscar un cliente</a>
                         </li>
                         <li>
                               <a href="#">Ver todos lo clientes</a>
@@ -59,10 +59,10 @@
                               <a href="#">Crear listas de materiales, herramientas o equipo</a>
                         </li>
                         <li>
-                              <a href="app-insert-work-order">Insertar una orden de trabajo</a>
+                              <a [routerLink]='["app-insert-work-order"]' >Insertar una orden de trabajo</a>
                         </li>
                         <li>
-                              <a href="app-work-order">Buscar una lista</a>
+                              <a [routerLink]='["app-work-order"]'>Buscar una lista</a>
                         </li>
                         <li>
                               <a href="app-work-order">Ver todas las listas</a>
@@ -76,13 +76,13 @@
                   </div>
                   <ul class="submenu">
                         <li>
-                              <a href="/app-inventory-category">Categorías</a>
+                              <a [routerLink]='["app-inventory-category"]'>Categorías</a>
                         </li>
                         <li>
-                              <a href="/app-measurement-unit">Unidades de medida</a>
+                              <a [routerLink]='["app-measurement-unit"]' >Unidades de medida</a>
                         </li>
                         <li>
-                              <a href="/app-model-brand">Modelo y marca</a>
+                              <a [routerLink]='["app-model-brand"]'>Modelo y marca</a>
                         </li>
                         <li>
                               <a href="#">Ingresar material</a>
@@ -91,10 +91,10 @@
                               <a href="#">Ver el material</a>
                         </li>
                         <li>
-                              <a href="/app-insert-device">Ingresar equipo</a>
+                              <a [routerLink]='["app-inventory-category"]'href="/app-insert-device">Ingresar equipo</a>
                         </li>
                         <li>
-                              <a href="app-device">Ver equipo</a>
+                              <a [routerLink]='["app-device"]'>Ver equipo</a>
                         </li>
                         <li>
                               <a href="#">Ingresar herramientas</a>
