@@ -3,16 +3,25 @@
     <h3>Ingresar Modelo y Marca</h3>
   </div>
   <div class="panel-body">
-    <h4 style="color: black; margin-left: -54%">Modelo:</h4>
-    <div class="form-group" style="width: 75%; margin-left: 15%">
-      <input type="text" class="form-control" id="model" placeholder="Modelo" required [(ngModel)]="modelBrand.model"
-        name=modelBrand>
+    <div class="alert alert-success" *ngIf="sucess">
+      <div>Ingresado con exito</div>
     </div>
-    <h4 style="color: black; margin-left: -54%">Marca:</h4>
-    <div class="form-group" style="width: 75%; margin-left: 15%">
-      <input type="text" class="form-control" id="brand" placeholder="Marca" required [(ngModel)]="modelBrand.brand"
-        name=modelBrand>
-    </div>
-    <a type="submit" class="btn btn-ttc" (click)="createModelBrand()">Ingresar</a>
+    <form #formInsertModelBrand="ngForm" (ngSubmit)="createModelBrand(formInsertModelBrand)">
+      <h4 style="color: black; margin-left: -54%">Modelo:</h4>
+      <div class="form-group" style="width: 75%; margin-left: 15%">
+        <input type="text" #modelo="ngModel" class="form-control" placeholder="Modelo" required [(ngModel)]="modelBrand.model" name="modelo">
+        <div class="alert alert-warning" *ngIf="modelo.touched && !modelo.valid">
+          <div *ngIf="modelo.errors.required">Campo obligatorio.</div>
+        </div>
+      </div>
+      <h4 style="color: black; margin-left: -54%">Marca:</h4>
+      <div class="form-group" style="width: 75%; margin-left: 15%">
+        <input type="text" #brand="ngModel" class="form-control" placeholder="Marca" required [(ngModel)]="modelBrand.brand" name="marca">
+        <div class="alert alert-warning" *ngIf="brand.touched && !brand.valid">
+          <div *ngIf="brand.errors.required">Campo obligatorio.</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-ttc">Ingresar</button>
+    </form>
   </div>
 </div>

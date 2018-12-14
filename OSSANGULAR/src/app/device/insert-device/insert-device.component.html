@@ -3,94 +3,98 @@
         <div class="container" style="margin-top: 30%;margin-left: 90%">
             <div class="col-sm-6">
                 <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h3>Ingresar Equipo</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-sm-6">
-
-                        <label style="align-content: center" for="serie">Número de Serie</label>
-                        <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" class="form-control" name="serie"  placeholder="Número de serie" required [(ngModel)]="device.serialNumber" >
+                    <form #formInsertDevice="ngForm" (ngSubmit)="createDevice(formInsertDevice)">
+                        <div class="panel-heading">
+                            <h3>Ingresar Equipo</h3>
                         </div>
-
-                        <label for="nombre">Nombre</label>
-                        <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" class="form-control" name="nombre"  placeholder="Nombre" required [(ngModel)]="device.name" >
+                        <div class="alert alert-success" *ngIf="sucess">
+                            <div>Ingresado con exito</div>
                         </div>
+                        <div class="panel-body">
+                            <div class="col-sm-6">
+                                <label style="align-content: center" for="serie">Número de Serie</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <input type="text" class="form-control" #serie="ngModel" placeholder="Número de serie"
+                                        required [(ngModel)]="device.serialNumber" name="serie">
+                                    <div class="alert alert-warning" *ngIf="serie.touched && !serie.valid">
+                                        <div *ngIf="serie.errors.required">Campo obligatorio.</div>
+                                    </div>
+                                </div>
+                                <label for="nombre">Nombre</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <input type="text" class="form-control" #nombre="ngModel" placeholder="Nombre"
+                                        required [(ngModel)]="device.name" name="nombre">
+                                    <div class="alert alert-warning" *ngIf="nombre.touched && !nombre.valid">
+                                        <div *ngIf="nombre.errors.required">Campo obligatorio.</div>
+                                    </div>
+                                </div>
 
-                        <label for="modelo">Modelo de fabricante</label>
-                        <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" class="form-control" name="modelo"  placeholder="Modelo de fabricante" required [(ngModel)]="device.manufacturerModel" >
+                                <label for="modelo">Modelo de fabricante</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <input type="text" class="form-control" #modelo="ngModel" placeholder="Modelo de fabricante"
+                                        required [(ngModel)]="device.manufacturerModel" name="modelo">
+                                    <div class="alert alert-warning" *ngIf="modelo.touched && !modelo.valid">
+                                        <div *ngIf="modelo.errors.required">Campo obligatorio.</div>
+                                    </div>
+                                </div>
+
+
+                                <label for="descripcion">Descripción</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <input type="text" class="form-control" #descripcion="ngModel" placeholder="Descripción"
+                                        required [(ngModel)]="device.description" name="descripcion">
+                                    <div class="alert alert-warning" *ngIf="descripcion.touched && !descripcion.valid">
+                                        <div *ngIf="descripcion.errors.required">Campo obligatorio.</div>
+                                    </div>
+                                </div>
+
+                                <label for="cantidad">Cantidad</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <input type="number" class="form-control" #cantidad="ngModel" placeholder="Cantidad"
+                                        required [(ngModel)]="device.quantity" name="cantidad">
+                                    <div class="alert alert-warning" *ngIf="cantidad.touched && !cantidad.valid">
+                                        <div *ngIf="cantidad.errors.required">Campo obligatorio.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>Elija un estado</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <ng-select [items]="states" bindLabel="state" bindValue="id" placeholder="Seleccione un estado"
+                                        [(ngModel)]="device.state.id" name="state">
+                                    </ng-select>
+                                </div>
+
+                                <label>Elija una categoría</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <ng-select [items]="categories" bindLabel="name" bindValue="id" placeholder="Seleccione una categoría"
+                                        [(ngModel)]="device.category.id" name="categories">
+                                    </ng-select>
+                                </div>
+
+                                <label>Elija modelo y marca</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <ng-select [items]="brandsModels" bindLabel='model' bindValue="id" placeholder="Seleccione una marca"
+                                        [(ngModel)]="device.brand.id" name="modelBrand">
+                                    </ng-select>
+                                </div>
+
+                                <label>Elija una unidad de medida</label>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <ng-select [items]="units" bindLabel="name" bindValue="id" placeholder="Seleccione una unidad"
+                                        [(ngModel)]="device.unit.id" name="units">
+                                    </ng-select>
+                                </div>
+                            </div>
                         </div>
-
-               
-                        <label for="descripcion">Descripción</label>
-                        <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="text" class="form-control" name="descripcion" placeholder="Descripción" required [(ngModel)]="device.description" >
+                        <div class="container-fluid">
+                            <button type="submit" class="btn btn-ttc btn-block">Ingresar</button>
                         </div>
-
-                        <label for="cantidad">Cantidad</label>
-                        <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" required [(ngModel)]="device.quantity" >
-                        </div>
-                      </div>
-
-                        <div class="col-sm-6">
-                            <label >Elija un estado</label>
-                            <div class="form-group"  style="width: 90%; margin-left: 15%">
-                                <ng-select [items]="states"
-                                bindLabel="state"
-                                bindValue="id"
-                                placeholder="Seleccione un estado"
-                                [(ngModel)]="device.state.id">
-                                 </ng-select>
-                             </div>
-
-                             <label>Elija una categoría</label>
-                            <div class="form-group"  style="width: 90%; margin-left: 15%">
-                                <ng-select [items]="categories"
-                                bindLabel="name"
-                                bindValue="id"
-                                placeholder="Seleccione una categoría"
-                                [(ngModel)]="device.category.id">
-                                 </ng-select>
-                             </div>
-
-                             <label>Elija modelo y marca</label>
-                            <div class="form-group"  style="width: 90%; margin-left: 15%">
-                                <ng-select [items]="brandsModels"
-                                bindLabel='model'
-                                bindValue="id"
-                                placeholder="Seleccione una marca"
-                                [(ngModel)]="device.brand.id">
-                                 </ng-select>
-                             </div>
-                             
-                             <label >Elija una unidad de medida</label>
-                             <div class="form-group"  style="width: 90%; margin-left: 15%">
-                                 <ng-select [items]="units"
-                                 bindLabel="name"
-                                 bindValue="id"
-                                 placeholder="Seleccione una unidad"
-                                 [(ngModel)]="device.unit.id">
-                                  </ng-select>
-                              </div>
-
-                           
-                        </div>
-                                                                   
-
-                        
-                    </div>
-                  <div class="container-fluid">
-                     <a type="button" class="btn btn-ttc btn-block" (click)="createDevice()">Ingresar</a>
-                  </div>
-                  <br>
-                   
+                        <br>
+                    </form>
                 </div>
             </div>
-           
         </div>
     </div>
 </div>

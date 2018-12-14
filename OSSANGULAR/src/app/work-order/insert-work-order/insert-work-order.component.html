@@ -1,68 +1,53 @@
 <div class="row">
-  <div class="col-sm-2">
-      <div class="container" style="margin-top: 30%;margin-left: 90%">
-          <div class="col-sm-6">
-              
-              <div class="panel panel-default text-center">
-                  <div class="panel-heading">
-                      <h3>Ingresar una orden de trabajo</h3>
-                  </div>
-                  <div class="panel-body">
-                      <div class="col-sm-10">                           
-                     
-                      <div class="form-group" style="width: 90%; margin-left: 15%">
-                            <label style="align-content: center" for="descripcion">Descripción</label>
-                          <input type="text" class="form-control" name="descripcion"  placeholder="Descripción" required [(ngModel)]="workOrder.description" >
-                      </div>
-
-                      <div class="form-group"  style="width: 90%; margin-left: 15%">
-                        <label >Elija un tipo de orden de trabajo</label>
-                          <ng-select [items]="workOrdersType"
-                          bindLabel="name"
-                          bindValue="id"
-                          placeholder="Seleccione una orden de trabajo"
-                          [(ngModel)]="workOrder.workOrderType.id">
-                           </ng-select>
-                       </div>
-
-                      
-                       <div class="form-group"  style="width: 90%; margin-left: 15%">
-                         <label >Elija un cliente</label>
-                           <ng-select [items]="clients"
-                           bindLabel="name"
-                           bindValue="id"
-                           placeholder="Seleccione un cliente"
-                           [(ngModel)]="workOrder.client.id">
-                            </ng-select>
+    <div class="col-sm-2">
+        <div class="container" style="margin-top: 30%;margin-left: 90%">
+            <div class="col-sm-6">
+                <form #formWorkOrder="ngForm" (ngSubmit)="createWorkOrder(formWorkOrder)">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <h3>Ingresar una orden de trabajo</h3>
                         </div>
+                        <div class="alert alert-success" *ngIf="sucess">
+                            <div>Ingresado con exito</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-sm-10">
 
-                    
-                        
-                        <div class="form-group"  style="width: 90%; margin-left: 15%">
-                          <label>Seleccione los técnicos asociados</label>
-                        <ng-select [items]="employees"
-                            bindLabel='name'
-                            bindValue="id"
-                            [multiple]="true"
-                            placeholder="Seleccione los técnicos"
-                            [(ngModel)]="selectedEmployees">
-                        </ng-select>
-                      </div>
-                 
-
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <label style="align-content: center" for="descripcion">Descripción</label>
+                                    <input type="text" class="form-control" #description="ngModel" placeholder="Descripción"
+                                        required [(ngModel)]="workOrder.description" name="descripcion">
+                                </div>
+                                <div class="alert alert-warning" *ngIf="description.touched && !description.valid">
+                                    <div *ngIf="description.errors.required">Campo obligatorio.</div>
+                                </div>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <label>Elija un tipo de orden de trabajo</label>
+                                    <ng-select [items]="workOrdersType" bindLabel="name" bindValue="id" placeholder="Seleccione una orden de trabajo"
+                                        [(ngModel)]="workOrder.workOrderType.id" name="workorderstype">
+                                    </ng-select>
+                                </div>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <label>Elija un cliente</label>
+                                    <ng-select [items]="clients" bindLabel="name" bindValue="id" placeholder="Seleccione un cliente"
+                                        [(ngModel)]="workOrder.client.id" name="clients">
+                                    </ng-select>
+                                </div>
+                                <div class="form-group" style="width: 90%; margin-left: 15%">
+                                    <label>Seleccione los técnicos asociados</label>
+                                    <ng-select [items]="employees" bindLabel='name' bindValue="id" [multiple]="true"
+                                        placeholder="Seleccione los técnicos" [(ngModel)]="selectedEmployees" name="employees">
+                                    </ng-select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <button type="submit" class="btn btn-ttc btn-block">Ingresar</button>
+                        </div>
+                        <br>
                     </div>
-                                                             
-
-                      
-                  </div>
-                <div class="container-fluid">
-                   <a type="button" class="btn btn-ttc btn-block" (click)="createWorkOrder()">Ingresar</a>
-                </div>
-                <br>
-                 
-              </div>
-          </div>
-         
-      </div>
-  </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
