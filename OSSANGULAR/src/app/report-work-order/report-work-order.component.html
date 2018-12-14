@@ -3,24 +3,27 @@
     <h1>Reporte de ordenes de trabajo de clientes en una fecha</h1>
   </div>
   <div class="panel-body">
-    <div class=" col-xs-4">
+   
 
 
       <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-3">
           <label>Fecha</label>
           <input type="date" class="form-control" placeholder="YYYY-MM-DD" required [(ngModel)]="date">
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-3">
           <label>Nombre del cliente</label>
           <input type="text" class="form-control" required [(ngModel)]="nameClient">
         </div>
+        <div class="col-sm-1">
+          <br>
+          <button class="btn btn-ttc" (click)="getReport()">Buscar</button>
+        </div>
+        <div class="col-sm-1">
+            <br>
+          <button class="btn btn-ttc" (click)="getAll()">Ver Todos</button>
+        </div>
       </div>
-      <button class="btn btn-ttc" (click)="getReport()">Buscar</button>
-      <button class="btn btn-ttc" (click)="getAll()">Ver Todos</button>
-
-
-    </div>
     <br>
     <table class="table table-striped">
       <tr>
