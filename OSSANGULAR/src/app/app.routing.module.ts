@@ -22,18 +22,16 @@ import { InsertModelBrandComponent } from './model-brand/insert-model-brand/inse
 import { UpdateClientComponent } from './client/update-client/update-client.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { InsertWorkOrderComponent } from './work-order/insert-work-order/insert-work-order.component';
-<<<<<<< HEAD
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AuthGuard } from './authentication/guards/auth.guard';
-=======
+
 import { ReportWorkOrderComponent } from './report-work-order/report-work-order.component';
 
->>>>>>> a9914cf5d9a7d7b857c98d4594977e1e868dce3b
 
 const routes: Routes = [
     {path:'',redirectTo:'search-home',pathMatch:'full'},
     {path: "app-menu", component: MenuComponent, outlet:'menu' },
-<<<<<<< HEAD
+
     {path: "app-device", component: DeviceComponent, canActivate: [AuthGuard] } ,  
     {path: "app-insert-device", component: InsertDeviceComponent, canActivate: [AuthGuard] },
     {path: "app-update-device", component: UpdateDeviceComponent, canActivate: [AuthGuard] },
@@ -51,28 +49,9 @@ const routes: Routes = [
     {path: "app-update-client", component: UpdateClientComponent, canActivate: [AuthGuard]},
     {path: "app-work-order", component: WorkOrderComponent, canActivate: [AuthGuard]},
     {path: "app-insert-work-order", component: InsertWorkOrderComponent, canActivate: [AuthGuard]},
-    {path: "app-authentication",component:AuthenticationComponent}
-=======
-    {path: "app-device", component: DeviceComponent } ,  
-    {path: "app-insert-device", component: InsertDeviceComponent },
-    {path: "app-update-device", component: UpdateDeviceComponent },
-    {path: "app-home-admin", component: HomeAdminComponent },
-    {path: "app-client", component: ClientComponent},
-    {path: "app-insert-measurement-unit", component: InsertMeasurementUnitComponent},
-    {path: "app-insert-inventory-category", component: InsertInventoryCategoryComponent},
-    {path: "app-inventory-category", component: InventoryCategoryComponent},
-    {path: "app-update-inventory-category", component: UpdateInventoryCategoryComponent},
-    {path: "app-update-measurement-unit", component: UpdateMeasurementUnitComponent},
-    {path: "app-measurement-unit", component:MeasurementUnitComponent},
-    {path: "app-insert-client", component: InsertClientComponent},
-    {path: "app-model-brand", component: ModelBrandComponent},
-    {path: "app-insert-model-brand", component: InsertModelBrandComponent},
-    {path: "app-update-client", component: UpdateClientComponent},
-    {path: "app-work-order", component: WorkOrderComponent},
-    {path: "app-insert-work-order", component: InsertWorkOrderComponent},
+    {path: "app-authentication",component:AuthenticationComponent},
     {path: "app-report-work-order",component: ReportWorkOrderComponent}
-    
->>>>>>> a9914cf5d9a7d7b857c98d4594977e1e868dce3b
+
    ];
 
 @NgModule({
